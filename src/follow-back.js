@@ -1,8 +1,7 @@
 const axios = require('axios');
 require('dotenv').config();
 
-const username = process.env.USER,
-  token = process.env.TOKEN;
+const { USER: username, TOKEN: token } = process.env;
 
 /**
  * Module for managing followers and followings on GitHub.
@@ -10,7 +9,6 @@ const username = process.env.USER,
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {Object} An object containing functions to interact with followers and followings.
  */
-//function followBack(yourUsername = username, yourToken = token) {
 function followBack(yourUsername = username, yourToken = token) {
   /**
    * Retrieves all followers of the specified user.
@@ -24,8 +22,9 @@ function followBack(yourUsername = username, yourToken = token) {
     while (true) {
       try {
         const response = await axios.get(
-          `https://api.github.com/users/${yourUsername}/followers?page=${page}&per_page=100`,
+          `https://api.github.com/users/${yourUsername}/followers`,
           {
+            params: { page, per_page: 100 },
             auth: {
               username: yourUsername,
               password: yourToken,
@@ -35,28 +34,15 @@ function followBack(yourUsername = username, yourToken = token) {
 
         const data = response.data;
 
-        if (!data || (Array.isArray(data) && data.length === 0)) {
+        if (!data || data.length === 0) {
           break;
         }
 
-        followers.push(...data.map((follower) => follower.login));
+        followers.push(...data.map(({ login }) => login));
         page++;
       } catch (error) {
-        if (error.response) {
-          // The request was made, but the server responded with an error
-          console.error(
-            `API Error: ${error.response.status} - ${error.response.data.message}`,
-          );
-        } else if (error.request) {
-          // The request was made, but no response was received
-          console.error('No response received from the server');
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.error(`Error: ${error.message}`);
-        }
-
-        return []; // Return an empty array or handle the error as appropriate for your application
-        //break;
+        handleAxiosError(error);
+        return [];
       }
     }
 
@@ -75,8 +61,9 @@ function followBack(yourUsername = username, yourToken = token) {
     while (true) {
       try {
         const response = await axios.get(
-          `https://api.github.com/users/${yourUsername}/following?page=${page}&per_page=100`,
+          `https://api.github.com/users/${yourUsername}/following`,
           {
+            params: { page, per_page: 100 },
             auth: {
               username: yourUsername,
               password: yourToken,
@@ -86,144 +73,98 @@ function followBack(yourUsername = username, yourToken = token) {
 
         const data = response.data;
 
-        if (!data || (Array.isArray(data) && data.length === 0)) {
+        if (!data || data.length === 0) {
           break;
         }
 
-        following.push(...data.map((user) => user.login));
+        following.push(...data.map(({ login }) => login));
         page++;
       } catch (error) {
-        if (error.response) {
-          // The request was made, but the server responded with an error
-          console.error(
-            `API Error: ${error.response.status} - ${error.response.data.message}`,
-          );
-        } else if (error.request) {
-          // The request was made, but no response was received
-          console.error('No response received from the server');
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.error(`Error: ${error.message}`);
-        }
-
-        return []; // Return an empty array or handle the error as appropriate for your application
-
-        //break;
+        handleAxiosError(error);
+        return [];
       }
     }
 
     return following;
   }
 
+  /**
+   * Handles errors from Axios requests.
+   * @param {Error} error - The error object.
+   */
+  function handleAxiosError(error) {
+    if (error.response) {
+      // The request was made, but the server responded with an error
+      console.error(
+        `API Error: ${error.response.status} - ${error.response.data.message}`,
+      );
+    } else if (error.request) {
+      // The request was made, but no response was received
+      console.error('No response received from the server');
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.error(`Error: ${error.message}`);
+    }
+  }
+
   return {
-    /**
-     * Checks if a user is a follower of the specified user.
-     * @param {string} username - The username to check.
-     * @returns {Promise<string>} A message indicating if the user follows or not.
-     */
     async isFollower(username) {
-      const followers = await getAllFollowers(username);
-      let message;
-      if (followers.includes(username)) {
-        message = 'Yes, ' + username + ' follow you!';
-        console.log(message);
-      } else {
-        message = 'No, ' + username + ' not follow you!';
-        console.log(message);
-      }
+      const followers = await getAllFollowers();
+      const message = followers.includes(username)
+        ? `Yes, ${username} follows you!`
+        : `No, ${username} does not follow you!`;
+      console.log(message);
       return message;
     },
 
-    /**
-     * Checks if the specified user is being followed by the authenticated user.
-     * @param {string} username - The username to check.
-     * @returns {Promise<string>} A message indicating if the user is being followed or not.
-     */
     async isFollowing(username) {
-      const followings = await getAllFollowing(username);
-      let message;
-      if (followings.includes(username)) {
-        message = 'Yes, you follow ' + username + '!';
-        console.log(message);
-      } else {
-        message = 'No, you not follow ' + username + '!';
-        console.log(message);
-      }
+      const following = await getAllFollowing();
+      const message = following.includes(username)
+        ? `Yes, you follow ${username}!`
+        : `No, you do not follow ${username}!`;
+      console.log(message);
       return message;
     },
 
-    /**
-     * Retrieves the total number of followers of the authenticated user.
-     * @returns {Promise<number>} The total number of followers.
-     */
     async totalFollowers() {
       const followers = await getAllFollowers();
-      let total = followers.length;
-      console.log(`Your total Followers: ${total}`);
-      return total;
+      console.log(`Your total Followers: ${followers.length}`);
+      return followers.length;
     },
 
-    /**
-     * Retrieves the total number of users that the authenticated user is following.
-     * @returns {Promise<number>} The total number of followings.
-     */
     async totalFollowings() {
-      const followings = await getAllFollowing();
-      let total = followings.length;
-      console.log(`Your total Followings: ${total}`);
-      return total;
+      const following = await getAllFollowing();
+      console.log(`Your total Followings: ${following.length}`);
+      return following.length;
     },
 
-    /**
-     * Retrieves users that the authenticated user is following but not being followed back.
-     * @returns {Promise<Array<string>>} An array of usernames.
-     */
     async whoNotFollowingBack() {
       const followers = await getAllFollowers();
       const following = await getAllFollowing();
-
       const notFollowingBack = following.filter(
         (user) => !followers.includes(user),
       );
       return notFollowingBack;
     },
 
-    /**
-     * Retrieves users that the authenticated user is following and are also being followed back.
-     * @returns {Promise<Array<string>>} An array of usernames.
-     */
     async whoFollowingBack() {
       const followers = await getAllFollowers();
       const following = await getAllFollowing();
-
       const followingBacks = following.filter((user) =>
         followers.includes(user),
       );
       return followingBacks;
     },
 
-    /**
-     * Checks if the specified user is following back the authenticated user.
-     * @param {string} username - The username to check.
-     * @returns {Promise<string>} A message indicating if the user is following back or not.
-     */
     async isFollowingBack(username) {
       const followingBacks = await this.whoFollowingBack();
-      let message;
-      if (followingBacks.includes(username)) {
-        message = 'Yes, ' + username + ' following back!';
-        console.log(message);
-      } else {
-        message = 'No, ' + username + ' not following back!';
-        console.log(message);
-      }
+      const message = followingBacks.includes(username)
+        ? `Yes, ${username} following back!`
+        : `No, ${username} does not following back!`;
+      console.log(message);
       return message;
     },
 
-    /**
-     * Unfollows a user who is not following back the authenticated user.
-     * @param {string} username - The username to unfollow.
-     */
     async unfollowNotFollowingBack(username) {
       const notFollowingBack = await this.whoNotFollowingBack();
       if (notFollowingBack.includes(username)) {
@@ -241,34 +182,26 @@ function followBack(yourUsername = username, yourToken = token) {
           console.error(`Failed to unfollow: ${username}`);
         }
       } else {
-        console.log('Sorry, ' + username + ' is not a not-following-back user');
+        console.log(
+          `Sorry, ${username} is not a user who is not following you back`,
+        );
       }
     },
 
-    /**
-     * Unfollows all users who are not following back the authenticated user.
-     * @async
-     * @returns {Promise<void>} A promise that resolves once all users have been unfollowed.
-     */
     async unfollowAllNotFollowingBack() {
       const notFollowingBack = await this.whoNotFollowingBack();
-
-      let counter = 1;
       for (const user of notFollowingBack) {
         try {
           await axios.delete(`https://api.github.com/user/following/${user}`, {
             headers: {
-              Authorization: `token ${yourToken}`, // Assuming yourToken is defined somewhere in the scope
+              Authorization: `token ${yourToken}`,
             },
           });
-          console.log(`${counter} Unfollowed: ${user}`);
+          console.log(`Unfollowed: ${user}`);
         } catch (error) {
           console.error(`Failed to unfollow: ${user}`);
         }
       }
-      //console.log(
-      //`Process finished!\n\nYour total Followers: ${await this.totalFollowers()}\nYour total Followings: ${await this.totalFollowings()}\n`,
-      //);
     },
   };
 }
