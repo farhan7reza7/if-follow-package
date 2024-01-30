@@ -1,4 +1,4 @@
-### if-follow-package's Code of Conduct:
+### `if-follow-package's` Code of Conduct:
 
 #### Our Pledge
 
