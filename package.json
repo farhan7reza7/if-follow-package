@@ -1,5 +1,5 @@
 {
-  "name": "follow-back-package",
+  "name": "if-follow-package",
   "version": "1.0.0-alpha.1",
   "description": "A javascript library for ...",
   "main": "src/follow-back.js",
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/farhan7reza7/follow-back-package/blob/main/README.md",
   "dependencies": {
-    "axios": "^0.21.4"
+    "axios": "^0.21.4",
+    "dotenv": "^16.4.1"
   }
 }
