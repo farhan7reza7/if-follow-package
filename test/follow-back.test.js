@@ -5,9 +5,6 @@ describe('Follow Back Module', () => {
   jest.mock('axios');
   const axios = require('axios');
 
-  const yourUsername = 'spirito7phil';
-  const yourToken = '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';
-
   beforeEach(() => {
     axios.get.mockReset();
     axios.delete.mockReset();
