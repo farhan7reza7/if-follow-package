@@ -26,10 +26,16 @@ and follows the guidelines from [Keep a Changelog](https://keepachangelog.com/).
 #### Security
 - Enhanced security measures in API requests.
 
+### [v1.0.1]
+
+#### Fixed
+
+fixed some issues and configured files for v1.0.1
+
 ### [Next Release] - Collecting issues and new features for release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.0.0...HEAD)
-- [1.0.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.0.0)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.0.1...HEAD)
+- [1.0.1](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.0.1)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
