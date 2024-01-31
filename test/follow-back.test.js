@@ -20,6 +20,7 @@ describe('Follow Back Module', () => {
   axios.get.mockImplementation(async (url, config) => {
     // Mocking GitHub API responses
     if (url.includes('/followers')) {
+      // Mock followers response
       return {
         data: [
           { login: 'farhan7reza7' },
@@ -29,6 +30,7 @@ describe('Follow Back Module', () => {
         ],
       };
     } else if (url.includes('/following')) {
+      // Mock following response
       return {
         data: [
           { login: 'farhan7reza7' },
@@ -45,11 +47,13 @@ describe('Follow Back Module', () => {
   axios.delete.mockImplementation(async (url, config) => {});
 
   describe('isFollower', () => {
+    // Test case to check if a user is a follower
     it('should return true if the user is a follower', async () => {
       const result = await followBack().isFollower('farhan7reza7');
       expect(result).toBe('Yes, farhan7reza7 follows you!');
     });
 
+    // Test case to check if a user is not a follower
     it('should return false if the user is not a follower', async () => {
       const result = await followBack().isFollower('diff-ymd-package');
       expect(result).toBe('No, diff-ymd-package does not follow you!');
@@ -57,17 +61,20 @@ describe('Follow Back Module', () => {
   });
 
   describe('isFollowing', () => {
+    // Test case to check if a user is followed
     it('should return true if the user is followed', async () => {
       const result = await followBack().isFollowing('farhan7reza7');
       expect(result).toBe('Yes, you follow farhan7reza7!');
     });
 
+    // Test case to check if a user is not followed
     it('should return false if the user is not followed', async () => {
       const result = await followBack().isFollowing('anaseem80');
       expect(result).toBe('No, you do not follow anaseem80!');
     });
   });
 
+  // Test case for the total number of followers
   describe('totalFollowers', () => {
     it('should return the total number of followers', async () => {
       const result = await followBack().totalFollowers();
@@ -75,6 +82,7 @@ describe('Follow Back Module', () => {
     });
   });
 
+  // Test case for the total number of followings
   describe('totalFollowings', () => {
     it('should return the total number of followings', async () => {
       const result = await followBack().totalFollowings();
@@ -82,6 +90,7 @@ describe('Follow Back Module', () => {
     });
   });
 
+  // Test case for users who are not following back
   describe('whoNotFollowingBack', () => {
     it('should return users who are not following back', async () => {
       const result = await followBack().whoNotFollowingBack();
@@ -89,6 +98,7 @@ describe('Follow Back Module', () => {
     });
   });
 
+  // Test case for users who are following back
   describe('whoFollowingBack', () => {
     it('should return users who are following back', async () => {
       const result = await followBack().whoFollowingBack();
@@ -96,61 +106,37 @@ describe('Follow Back Module', () => {
     });
   });
 
+  // Test case to check if a user is following back
   describe('isFollowingBack', () => {
     it('should return true if the user is following back', async () => {
       const result = await followBack().isFollowingBack('farhan7reza7');
       expect(result).toBe('Yes, farhan7reza7 following back!');
     });
 
+    // Test case to check if a user is not following back
     it('should return false if the user is not following back', async () => {
       const result = await followBack().isFollowingBack('diff-ymd-package');
       expect(result).toBe('No, diff-ymd-package does not following back!');
     });
   });
 
+  // Test case to check unfollowing a user who is not following back
   describe('unfollowNotFollowingBack', () => {
-    // Before your test cases, spy on axios.delete
     it('should unfollow a user who is not following back', async () => {
       axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
-      //jest.spyOn(axios, 'delete').mockResolvedValueOnce({ status: 204 });
 
       await followBack().unfollowNotFollowingBack('diff-ymd-package');
-      // Make assertions on the number of calls and the parameters passed
       expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
-
-      /*expect(axios.delete).toHaveBeenCalledWith(
-        'https://api.github.com/user/following/diff-ymd-package',
-        {
-          headers: {
-            Authorization: `token ${token}`,
-          },
-        },
-      );*/
     });
   });
 
+  // Test case to check unfollowing all users who are not following back
   describe('unfollowAllNotFollowingBack', () => {
-    // Before your test cases, spy on axios.delete
     it('should unfollow all users who are not following back', async () => {
       axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
 
       await followBack().unfollowAllNotFollowingBack();
-      // Make assertions on the number of calls and the parameters passed
       expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
-
-      /*for (const user of ['Open-Sourced-Org']) {
-        //expect(axios.delete).toHaveBeenCalledWith(
-        expect(axios.delete).toHaveBeenCalledWith(
-          expect.stringContaining(
-            `https://api.github.com/user/following/${user}`,
-          ),
-          expect.objectContaining({
-            headers: {
-              Authorization: 'token ${token}',
-            },
-          }),
-        );
-      }*/
     });
   });
 });
