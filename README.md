@@ -26,8 +26,7 @@ npm install if-follow-package
 npm install @farhan7reza7/if-follow-package
 ```
 
-Usage
------
+## Usage
 
 **Initialize**
 
@@ -48,6 +47,11 @@ const followController = ifFollow(yourUsername, yourToken);
 ```
 
 ##### Steps to generate access-token:
+[See steps here]()
+
+**Or if already know creating token**
+[generate here](https://github.com/settings/tokens/new)
+
 1. [generate here](https://github.com/settings/tokens/new)
 
 2. Fill Note field:
@@ -65,34 +69,67 @@ const followController = ifFollow(yourUsername, yourToken);
  
  <img width="416" alt="Screenshot 2024-01-31 183401" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/17184b96-3076-4696-a073-1b3bf352c492">
  
-**Use methods to manage follow**
+Use Methods to manage follow
+-----
 
+- Get a list of users who are not following you back
 ```javascript
-
-// Get a list of users who are not following you back
 const notFollowingBackList = followController.whoNotFollowingBack();
 
-// Get a list of users who are following you back
+```
+
+
+- Get a list of users who are following you back
+```javascript
 const followingBackList = followController.whoFollowingBack();
 
-// Check if a specific user is following you back
+```
+
+
+- Check if a specific user is following you back
+```javascript
 const isFollowingBackMessage = followController.isFollowingBack('username');
 
-// Unfollow a user who is not following you back followController.unfollowNotFollowingBack('username');
+```
 
-// Unfollow all users who are not following you back
+
+- Unfollow a user who is not following you back
+```javascript
+followController.unfollowNotFollowingBack('username');
+
+```
+
+
+- Unfollow all users who are not following you back
+```javascript
 followController.unfollowAllNotFollowingBack();
 
-// Check if a user is following you
+```
+
+
+- Check if a user is following you
+```javascript
 const isFollowerMessage = followController.isFollower('username');
 
-// Check if you are following a user
+```
+
+
+- Check if you are following a user
+```javascript
 const isFollowingMessage = followController.isFollowing('username');
 
-// Get the total number of followers
+```
+
+
+- Get the total number of followers
+```javascript
 const totalFollowersMessage = followController.totalFollowers();
 
-// Get the total number of followings
+```
+
+
+- Get the total number of followings
+```javascript
 const totalFollowingsMessage = followController.totalFollowings();
 
 ```
