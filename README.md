@@ -418,12 +418,6 @@ History
 For more details about what has changed in each version of this project.  
 [See CHANGELOG.md](CHANGELOG.md).
 
-
-
-[![pages-build-deployment](https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment)
-
-
-
 [npm-image]: https://img.shields.io/npm/v/if-follow-package
 [npm-url]: https://www.npmjs.com/package/if-follow-package
 [npm-ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-npm-registry.yml/badge.svg
