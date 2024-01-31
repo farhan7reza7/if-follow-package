@@ -72,63 +72,63 @@ const followController = ifFollow(yourUsername, yourToken);
 Use Methods to manage follow
 -----
 
-- Get a list of users who are not following you back
+- **Get a list of users who are not following you back**
 ```javascript
 const notFollowingBackList = followController.whoNotFollowingBack();
 
 ```
 
 
-- Get a list of users who are following you back
+- **Get a list of users who are following you back**
 ```javascript
 const followingBackList = followController.whoFollowingBack();
 
 ```
 
 
-- Check if a specific user is following you back
+- **Check if a specific user is following you back**
 ```javascript
 const isFollowingBackMessage = followController.isFollowingBack('username');
 
 ```
 
 
-- Unfollow a user who is not following you back
+- **Unfollow a user who is not following you back**
 ```javascript
 followController.unfollowNotFollowingBack('username');
 
 ```
 
 
-- Unfollow all users who are not following you back
+- **Unfollow all users who are not following you back**
 ```javascript
 followController.unfollowAllNotFollowingBack();
 
 ```
 
 
-- Check if a user is following you
+- **Check if a user is following you**
 ```javascript
 const isFollowerMessage = followController.isFollower('username');
 
 ```
 
 
-- Check if you are following a user
+- **Check if you are following a user**
 ```javascript
 const isFollowingMessage = followController.isFollowing('username');
 
 ```
 
 
-- Get the total number of followers
+- **Get the total number of followers**
 ```javascript
 const totalFollowersMessage = followController.totalFollowers();
 
 ```
 
 
-- Get the total number of followings
+- **Get the total number of followings**
 ```javascript
 const totalFollowingsMessage = followController.totalFollowings();
 
