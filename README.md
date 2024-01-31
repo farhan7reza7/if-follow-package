@@ -1,7 +1,24 @@
 if-follow-package
 =================
 
-> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`. This package allows you to `find users who are not following you back`, find users who are following you back, `unfollow users who are not following you back`, `check if a user is following you`, `check if you are following a user`, get the exact total number of followings, `get the exact total number of followers`, and other follow control features.
+> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`.
+
+**`if-follow-package` allows you the following:**
+- `find users who are not following you back`
+
+- `find users who are following you back`
+
+- `unfollow users who are not following you back`
+
+- `check if a user is following you`
+
+- `check if you are following a user`
+
+- `get the exact total number of followings`
+
+- `get the exact total number of followers`
+
+- `and other follow control features`
 
 [![NPM Version][npm-image]][npm-url]
 [![npm-build-published][npm-ci-image]][npm-ci-url]
@@ -126,12 +143,12 @@ Managed Outputs (example user outputs)
 ```javascript
 
 // Test case: user is a follower
-const result1 = followBack().isFollower('farhan7reza7');
+const result1 = followController.isFollower('farhan7reza7');
 
 console.log(result1); // Output: "Yes, farhan7reza7 follows you!"
 
 // Test case: user is not a follower
-const result2 = await followBack().isFollower('diff-ymd-package');
+const result2 = await followController.isFollower('diff-ymd-package');
 
 console.log(result2); // Output: "No, diff-ymd-package does not follow you!"
 
@@ -142,12 +159,12 @@ console.log(result2); // Output: "No, diff-ymd-package does not follow you!"
 ```javascript
 
 // Test case: user is followed
-const result3 = followBack().isFollowing('farhan7reza7');
+const result3 = followController.isFollowing('farhan7reza7');
 
 console.log(result3); // Output: "Yes, you follow farhan7reza7!"
 
 // Test case: user is not followed
-const result4 = await followBack().isFollowing('anaseem80');
+const result4 = await followController.isFollowing('anaseem80');
 
 console.log(result4); // Output: "No, you do not follow anaseem80!"
 
@@ -157,7 +174,7 @@ console.log(result4); // Output: "No, you do not follow anaseem80!"
 
 ```javascript
 
-const result5 = followBack().totalFollowers();
+const result5 = followController.totalFollowers();
 
 console.log(result5); // Output: "Your total Followers: 1657"
 
@@ -167,7 +184,7 @@ console.log(result5); // Output: "Your total Followers: 1657"
 
 ```javascript
 
-const result6 = followBack().totalFollowings();
+const result6 = followController.totalFollowings();
 
 console.log(result6); // Output: "Your total Followings: 1067`
 
@@ -177,7 +194,7 @@ console.log(result6); // Output: "Your total Followings: 1067`
 
 ```javascript
 
-const result7 = followBack().whoNotFollowingBack();
+const result7 = followController.whoNotFollowingBack();
 
 console.log(result7); // Output: ["diff-ymd-package", "Open-Sourced-Org", "username4", "usernameN"]
 
@@ -187,7 +204,7 @@ console.log(result7); // Output: ["diff-ymd-package", "Open-Sourced-Org", "usern
 
 ```javascript
 
-const result8 = followBack().whoFollowingBack();
+const result8 = followController.whoFollowingBack();
 
 console.log(result8); // Output: ["farhan7reza7", "username2", "username3", "usernameN"]
 
@@ -198,12 +215,12 @@ console.log(result8); // Output: ["farhan7reza7", "username2", "username3", "use
 ```javascript
 
 // Test case: user is following back
-const result9 = followBack().isFollowingBack('farhan7reza7');
+const result9 = followController.isFollowingBack('farhan7reza7');
 
 console.log(result9); // Output: "Yes, farhan7reza7 following back!"
 
 // Test case: user is not following back
-const result10 = followBack().isFollowingBack('diff-ymd-package');
+const result10 = followController.isFollowingBack('diff-ymd-package');
 
 console.log(result10); // Output: "No, diff-ymd-package does not following back!"`
 
@@ -214,7 +231,7 @@ console.log(result10); // Output: "No, diff-ymd-package does not following back!
 ```javascript
 
 // Test case: unfollow a user who is not following back
-const result11 = followBack().unfollowNotFollowingBack('diff-ymd-package');
+const result11 = followController.unfollowNotFollowingBack('diff-ymd-package');
 
 console.log(result11); // Output: "Unfollowed: diff-ymd-package"
 
@@ -225,7 +242,7 @@ console.log(result11); // Output: "Unfollowed: diff-ymd-package"
 ```javascript
 
 // Test case: unfollow all users who are not following back
-const result12 = followBack().unfollowAllNotFollowingBack();
+const result12 = followController.unfollowAllNotFollowingBack();
 
 console.log(result12); /* Output: "Unfollowed: Open-Sourced-Org"
                                   "Unfollowed: username2"
