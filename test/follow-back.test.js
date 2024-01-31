@@ -1,3 +1,8 @@
+// follow-back.test.js
+// @ts-nocheck
+// @ts-ignore
+// @flow
+
 const followBack = require('../src/follow-back');
 const axios = require('axios');
 
