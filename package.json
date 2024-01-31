@@ -1,5 +1,5 @@
 {
-  "name": "@farhan7reza7/if-follow-package",
+  "name": "if-follow-package",
   "version": "1.0.1",
   "description": "if-follow-package is a JavaScript library that provides APIs for managing followers and followings on GitHub. This package allows you to find users who are not following you back, find users who are following you back, unfollow users who are not following you back, check if a user is following you, check if you are following a user, get the exact total number of followings, get the exact total number of followers, and other follow control features.",  
   "main": "src/follow-back.js",
