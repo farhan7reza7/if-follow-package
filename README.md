@@ -370,6 +370,10 @@ followController.unfollowNotFollowingBack('username');
 ```
 *   **`username`**: The username of the user you want to unfollow.
 
+*   **`Returns:`**  {Promise<void>} A promise that resolves once the user is unfollowed.
+
+*   **Special case:** It outputs message in console/terminal indicating which user unfollowed 
+
 ##### `unfollowAllNotFollowingBack()`
 
 Unfollow all users who are not following you back.
@@ -378,6 +382,9 @@ Unfollow all users who are not following you back.
 
 followController.unfollowAllNotFollowingBack();
 ```
+*   **`Returns:`** {Promise<void>} A promise that resolves once all users are unfollowed.
+
+*   **Special case:** It outputs messages in console/terminal indicating which users unfollowed 
 
 For more information, See [`if-follow-package documentation`]()
 
