@@ -145,12 +145,16 @@ Managed Outputs (example user outputs)
 // Test case: user is a follower
 const result1 = followController.isFollower('farhan7reza7');
 
-console.log(result1); // Output: "Yes, farhan7reza7 follows you!"
+result1.then((result) => {
+    console.log(result);  // Output: "Yes, farhan7reza7 follows you!"
+  });
 
 // Test case: user is not a follower
-const result2 = await followController.isFollower('diff-ymd-package');
+const result2 = followController.isFollower('diff-ymd-package');
 
-console.log(result2); // Output: "No, diff-ymd-package does not follow you!"
+result2.then((result) => {
+  console.log(result);  // Output: "No, diff-ymd-package does not follow you!"
+});
 
 ```
 
@@ -161,12 +165,16 @@ console.log(result2); // Output: "No, diff-ymd-package does not follow you!"
 // Test case: user is followed
 const result3 = followController.isFollowing('farhan7reza7');
 
-console.log(result3); // Output: "Yes, you follow farhan7reza7!"
+result3.then((result) => {
+  console.log(result); // Output: "Yes, you follow farhan7reza7!"
+});
 
 // Test case: user is not followed
-const result4 = await followController.isFollowing('anaseem80');
+const result4 = followController.isFollowing('anaseem80');
 
-console.log(result4); // Output: "No, you do not follow anaseem80!"
+result4.then((result) => {
+  console.log(result);  // Output: "No, you do not follow anaseem80!"
+});
 
 ```
 
@@ -176,7 +184,9 @@ console.log(result4); // Output: "No, you do not follow anaseem80!"
 
 const result5 = followController.totalFollowers();
 
-console.log(result5); // Output: "Your total Followers: 1657"
+result5.then((result) => {
+  console.log(result);  // Output: "Your total Followers: 1657"
+});
 
 ```
 
@@ -186,7 +196,9 @@ console.log(result5); // Output: "Your total Followers: 1657"
 
 const result6 = followController.totalFollowings();
 
-console.log(result6); // Output: "Your total Followings: 1067`
+result6.then((result) => {
+  console.log(result);  // Output: "Your total Followings: 1067`
+});
 
 ```
 
@@ -196,7 +208,9 @@ console.log(result6); // Output: "Your total Followings: 1067`
 
 const result7 = followController.whoNotFollowingBack();
 
-console.log(result7); // Output: ["diff-ymd-package", "Open-Sourced-Org", "username4", "usernameN"]
+result7.then((result) => {
+  console.log(result); // Output: ["diff-ymd-package", "Open-Sourced-Org", "username4", "usernameN"]
+}); 
 
 ```
 
@@ -206,7 +220,9 @@ console.log(result7); // Output: ["diff-ymd-package", "Open-Sourced-Org", "usern
 
 const result8 = followController.whoFollowingBack();
 
-console.log(result8); // Output: ["farhan7reza7", "username2", "username3", "usernameN"]
+result8.then((result) => {
+  console.log(result); // Output: ["farhan7reza7", "username2", "username3", "usernameN"]
+}); 
 
 ```
 
@@ -217,12 +233,16 @@ console.log(result8); // Output: ["farhan7reza7", "username2", "username3", "use
 // Test case: user is following back
 const result9 = followController.isFollowingBack('farhan7reza7');
 
-console.log(result9); // Output: "Yes, farhan7reza7 following back!"
+result9.then((result) => {
+  console.log(result); // Output: "Yes, farhan7reza7 following back!"
+});  
 
 // Test case: user is not following back
 const result10 = followController.isFollowingBack('diff-ymd-package');
 
-console.log(result10); // Output: "No, diff-ymd-package does not following back!"`
+result10.then((result) => {
+  console.log(result); // Output: "No, diff-ymd-package does not following back!"
+}); 
 
 ```
 
@@ -232,8 +252,12 @@ console.log(result10); // Output: "No, diff-ymd-package does not following back!
 
 // Test case: unfollow a user who is not following back
 const result11 = followController.unfollowNotFollowingBack('diff-ymd-package');
+                 //Console Output: "Unfollowed: diff-ymd-package"
 
-console.log(result11); // Output: "Unfollowed: diff-ymd-package"
+// not needed to console, because internally log message, just only call
+result11.then((result) => {
+  console.log(result); // Output: "undefined"
+}); 
 
 ```
 
@@ -243,11 +267,15 @@ console.log(result11); // Output: "Unfollowed: diff-ymd-package"
 
 // Test case: unfollow all users who are not following back
 const result12 = followController.unfollowAllNotFollowingBack();
-
-console.log(result12); /* Output: "Unfollowed: Open-Sourced-Org"
-                                  "Unfollowed: username2"
-                                  "Unfollowed: username3"
-                                  "Unfollowed: usernameN"*/              
+                 /* Console Output: "Unfollowed: Open-Sourced-Org"
+                                    "Unfollowed: username2"
+                                    "Unfollowed: username3"
+                                    "Unfollowed: usernameN"*/
+     
+// not return anything, and internally log message, just only call
+result12..then((result) => {
+  console.log(result); // Output: "undefined"
+});       
  
 ```
 
