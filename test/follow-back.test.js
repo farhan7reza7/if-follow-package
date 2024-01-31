@@ -1,8 +1,9 @@
 const followBack = require('../src/follow-back'); // Import the module to be tested
 //require('dotenv').config();
-//const { TOKEN: token } = process.env;
+//const { TOKEN: token, USER: user} = process.env;
 
-const token = secrets.TOKEN, user = secrets.TOKEN
+const token = process.env.TOKEN;
+const user = process.env.USER;
 
 describe('Follow Back Module', () => {
   // Mocking axios calls
