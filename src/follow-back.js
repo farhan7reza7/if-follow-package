@@ -2,9 +2,6 @@
 const axios = require('axios');
 require('dotenv').config();
 
-// Retrieving GitHub credentials from environment variables
-const { USER: username, TOKEN: token } = process.env;
-
 /**
  * Module for managing followers and followings on GitHub.
  *
@@ -28,7 +25,7 @@ const { USER: username, TOKEN: token } = process.env;
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-function followBack(yourUsername = username, yourToken = token) {
+function followBack(yourUsername, yourToken) {
   /**
    * Retrieves all followers of the specified user.
    * @private
