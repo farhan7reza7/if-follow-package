@@ -250,7 +250,7 @@ function followBack(yourUsername, yourToken) {
         }
       } else {
         console.log(
-          `Sorry, ${username} is not a user who is not following you back`,
+          `Sorry, ${username} is not in not-following-back users`,
         );
       }
     },
@@ -279,6 +279,7 @@ function followBack(yourUsername, yourToken) {
           console.error(`Failed to unfollow: ${user}`);
         }
       }
+      console.log("Finished not following back users!");
     },
   };
 }
