@@ -47,27 +47,11 @@ const followController = ifFollow(yourUsername, yourToken);
 ```
 
 ##### Steps to generate access-token:
-[See steps here]()
+[See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/token%E2%80%90generation%E2%80%90steps.md)
 
 **Or if already know creating token**
 [generate here](https://github.com/settings/tokens/new)
 
-1. [generate here](https://github.com/settings/tokens/new)
-
-2. Fill Note field:
- 
- <img width="442" alt="image" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/c38f3677-73b5-448f-9409-36a92a5a134b">
-
-
-3. Check user access:
-
- <img width="404" alt="image" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/e5f63553-19c7-41c6-9824-b2557fc618ab">
-
-4. click Generate token
-
-5. Copy token:
- 
- <img width="416" alt="Screenshot 2024-01-31 183401" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/17184b96-3076-4696-a073-1b3bf352c492">
  
 Use Methods to manage follow
 -----
