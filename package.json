@@ -1,6 +1,6 @@
 {
   "name": "if-follow-package",
-  "version": "1.0.0-beta.1",
+  "version": "v1.0.0-beta.2",
   "description": "A javascript library for ...",
   "main": "src/follow-back.js",
   "scripts": {
