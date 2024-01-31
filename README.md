@@ -1,7 +1,7 @@
 if-follow-package
 =================
 
-> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`. This package allows you to `find users who are not following you back`, `unfollow users who are not following you back`, `find users who are following you back`, `check if a user is following you`, `check if you are following a user`, `get the exact total number of followers`, `get the exact total number of followings`, and other follow control features.
+> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`. This package allows you to `find users who are not following you back`, find users who are following you back, `unfollow users who are not following you back`, `check if a user is following you`, `check if you are following a user`, get the exact total number of followings, `get the exact total number of followers`, and other follow control features.
 
 [![NPM Version][npm-image]][npm-url]
 [![npm-build-published][npm-ci-image]][npm-ci-url]
@@ -23,7 +23,7 @@ npm install if-follow-package
 
 ```bash
 
-npm install @your-username/if-follow-package
+npm install @farhan7reza7/if-follow-package
 ```
 
 Usage
@@ -80,21 +80,137 @@ const isFollowingBackMessage = followController.isFollowingBack('username');
 
 // Unfollow a user who is not following you back followController.unfollowNotFollowingBack('username');
 
-`// Unfollow all users who are not following you back`
+// Unfollow all users who are not following you back
 followController.unfollowAllNotFollowingBack();
 
 // Check if a user is following you
-const isFollowerMessage = await followController.isFollower('username');
+const isFollowerMessage = followController.isFollower('username');
 
 // Check if you are following a user
-const isFollowingMessage = await followController.isFollowing('username');
+const isFollowingMessage = followController.isFollowing('username');
 
 // Get the total number of followers
-const totalFollowersMessage = await followController.totalFollowers();
+const totalFollowersMessage = followController.totalFollowers();
 
 // Get the total number of followings
-const totalFollowingsMessage = await followController.totalFollowings();
+const totalFollowingsMessage = followController.totalFollowings();
 
+```
+
+Managed Outputs (example user outputs)
+------------------------------
+
+#### `isFollower(username)`
+
+```javascript
+
+// Test case: user is a follower
+const result1 = followBack().isFollower('farhan7reza7');
+
+console.log(result1); // Output: "Yes, farhan7reza7 follows you!"
+
+// Test case: user is not a follower
+const result2 = await followBack().isFollower('diff-ymd-package');
+
+console.log(result2); // Output: "No, diff-ymd-package does not follow you!"
+
+```
+
+#### `isFollowing(username)`
+
+```javascript
+
+// Test case: user is followed
+const result3 = followBack().isFollowing('farhan7reza7');
+
+console.log(result3); // Output: "Yes, you follow farhan7reza7!"
+
+// Test case: user is not followed
+const result4 = await followBack().isFollowing('anaseem80');
+
+console.log(result4); // Output: "No, you do not follow anaseem80!"
+
+```
+
+#### `totalFollowers()`
+
+```javascript
+
+const result5 = followBack().totalFollowers();
+
+console.log(result5); // Output: "Your total Followers: 1657"
+
+```
+
+#### `totalFollowings()`
+
+```javascript
+
+const result6 = followBack().totalFollowings();
+
+console.log(result6); // Output: "Your total Followings: 1067`
+
+```
+
+#### `whoNotFollowingBack()`
+
+```javascript
+
+const result7 = followBack().whoNotFollowingBack();
+
+console.log(result7); // Output: ["diff-ymd-package", "Open-Sourced-Org", "username4", "usernameN"]
+
+```
+
+#### `whoFollowingBack()`
+
+```javascript
+
+const result8 = followBack().whoFollowingBack();
+
+console.log(result8); // Output: ["farhan7reza7", "username2", "username3", "usernameN"]
+
+```
+
+#### `isFollowingBack(username)`
+
+```javascript
+
+// Test case: user is following back
+const result9 = followBack().isFollowingBack('farhan7reza7');
+
+console.log(result9); // Output: "Yes, farhan7reza7 following back!"
+
+// Test case: user is not following back
+const result10 = followBack().isFollowingBack('diff-ymd-package');
+
+console.log(result10); // Output: "No, diff-ymd-package does not following back!"`
+
+```
+
+#### `unfollowNotFollowingBack(username)`
+
+```javascript
+
+// Test case: unfollow a user who is not following back
+const result11 = followBack().unfollowNotFollowingBack('diff-ymd-package');
+
+console.log(result11); // Output: "Unfollowed: diff-ymd-package"
+
+```
+
+#### `unfollowAllNotFollowingBack()`
+
+```javascript
+
+// Test case: unfollow all users who are not following back
+const result12 = followBack().unfollowAllNotFollowingBack();
+
+console.log(result12); /* Output: "Unfollowed: Open-Sourced-Org"
+                                  "Unfollowed: username2"
+                                  "Unfollowed: username3"
+                                  "Unfollowed: usernameN"*/              
+ 
 ```
 
 API Documentation
