@@ -386,7 +386,7 @@ followController.unfollowAllNotFollowingBack();
 
 *   **Special case:** It outputs messages in console/terminal indicating which users unfollowed 
 
-For more information, See [`if-follow-package documentation`]()
+For more information, [See `if-follow-package documentation`](https://farhan7reza7.github.io/if-follow-package/global.html)
 
 
 Contributing
