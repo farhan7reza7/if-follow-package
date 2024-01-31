@@ -420,13 +420,17 @@ For more details about what has changed in each version of this project.
 
 
 
+[![pages-build-deployment](https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment)
+
+
+
 [npm-image]: https://img.shields.io/npm/v/if-follow-package
 [npm-url]: https://www.npmjs.com/package/if-follow-package
 [npm-ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-npm-registry.yml/badge.svg
 [npm-ci-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-npm-registry.yml
 [github-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-github-packages.yml/badge.svg
 [github-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-github-packages.yml
-[ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment/badge.svg
+[ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main
 [ci-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment
 [license-image]: https://img.shields.io/github/license/farhan7reza7/if-follow-package
 [licence-url]: https://opensource.org/licenses/MIT
