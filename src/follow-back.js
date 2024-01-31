@@ -1,6 +1,6 @@
 // Importing required modules
 const axios = require('axios');
-require('dotenv').config();
+//require('dotenv').config();
 
 /**
  * Module for managing followers and followings on GitHub.
