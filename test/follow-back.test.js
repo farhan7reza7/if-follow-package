@@ -10,6 +10,10 @@ describe('Follow Back Module', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
+  
+  // These lines provide mock implementations for axios.get and axios.delete
+  axios.get.mockResolvedValue({ data: [] });
+  axios.delete.mockResolvedValue({ status: 204 });
 
   describe('isFollower', () => {
     it('should return true if the user is a follower', async () => {
