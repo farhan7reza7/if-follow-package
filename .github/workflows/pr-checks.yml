@@ -1,22 +1,28 @@
 name: Pull Request Validation
 
-on: 
+on:
   pull_request:
     branches:
-      - main
+      - main 
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: npm install
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: {`${{ matrix.node-version }}`}
 
-    - name: Lint code
-      run: npm run lint
-      
-    - name: Run tests
-      run: npm run test
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Lint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm run test 
