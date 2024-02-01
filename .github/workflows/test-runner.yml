@@ -27,7 +27,7 @@ jobs:
         run: npm ci
      
       - name: Run Source Code
-        run: node follow-back.js
+        run: npm run script-f
         env:
           TOKEN: ${{ secrets.TOKEN }}
           USER: ${{ secrets.USER }}     
