@@ -147,7 +147,7 @@ const result1 = followController.isFollower('farhan7reza7');
 
 result1.then((result) => {
     console.log(result);  // Output: "Yes, farhan7reza7 follows you!"
-  });
+});
 
 // Test case: user is not a follower
 const result2 = followController.isFollower('diff-ymd-package');
