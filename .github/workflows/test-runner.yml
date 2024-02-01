@@ -25,18 +25,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-     
-      - name: Run Source Code
-        run: npm run script-f
-        env:
-          TOKEN: ${{ secrets.TOKEN }}
-          USER: ${{ secrets.USER }}     
-      
+        
       - name: Run tests
-        run: |
-          echo "TOKEN: $token"
-          echo "USER: $user"
-          npm test
+        #run: |
+          #echo "TOKEN: $token"
+          #echo "USER: $user"
+          #npm test
+        run: npm test
         env:
           token: ${{ secrets.TOKEN }}
           user: ${{ secrets.USER }}
