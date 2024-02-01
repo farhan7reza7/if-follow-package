@@ -2,6 +2,10 @@
 
 name: test-runner
 
+env:
+  token: ${{ secrets.TOKEN }}
+  user: ${{ secrets.USER }}
+
 on:
   push:
     branches:
