@@ -1,6 +1,5 @@
 // Importing required modules
 const axios = require('axios');
-//require('dotenv').config();
 
 /**
  * Module for managing followers and followings on GitHub.
@@ -249,9 +248,7 @@ function followBack(yourUsername, yourToken) {
           console.error(`Failed to unfollow: ${username}`);
         }
       } else {
-        console.log(
-          `Sorry, ${username} is not in not-following-back users`,
-        );
+        console.log(`Sorry, ${username} is not in not-following-back users`);
       }
     },
 
@@ -279,7 +276,7 @@ function followBack(yourUsername, yourToken) {
           console.error(`Failed to unfollow: ${user}`);
         }
       }
-      console.log("Finished not following back users!");
+      console.log('Finished not following back users!');
     },
   };
 }
