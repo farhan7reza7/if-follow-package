@@ -13,7 +13,7 @@ describe('Follow Back Module', () => {
   describe('isFollower', () => {
     it('should return specific message if the user is a follower', async () => {
       axios.get.mockResolvedValueOnce((url, config) => {
-        if (url.includes(`/followers`) {
+        if (url.includes(`/followers`)) {
           return Promise.resolve({
             data: [{ login: 'farhan7reza7' }],
          };
@@ -30,7 +30,7 @@ describe('Follow Back Module', () => {
 
     it('should return specific message if the user is not a follower', async () => {
       axios.get.mockResolvedValueOnce((url, config) => {
-        if (url.includes(`/followers`) {
+        if (url.includes(`/followers`)) {
           return Promise.resolve({
             data: [{ login: 'follower1' }, { login: 'follower2' }],
          };
@@ -49,7 +49,7 @@ describe('Follow Back Module', () => {
   describe('isFollowing', () => {
     it('should return specific message if the user is followed', async () => {
       axios.get.mockResolvedValueOnce((url, config) => {
-        if (url.includes(`/following`) {
+        if (url.includes(`/following`)) {
           return Promise.resolve({
             data: [{ login: 'farhan7reza7' }, { login: 'follower1' }],
          };
@@ -66,16 +66,12 @@ describe('Follow Back Module', () => {
 
     it('should return specific message if the user is not followed', async () => {
       axios.get.mockResolvedValueOnce((url, config) => {
-        if (url.includes(`/following`) {
+        if (url.includes(`/following`)) {
           return Promise.resolve({
             data: [{ login: 'follower2' }, { login: 'follower3' }],
          };
       });
       
-      axios.get.mockResolvedValueOnce({
-        data: [{ login: 'follower2' }, { login: 'follower3' }],
-      });
-
       const result = await followBack(user, token).isFollowing('farhan7reza7');
       expect(result).toBe('No, you do not follow farhan7reza7!');
 
@@ -89,7 +85,7 @@ describe('Follow Back Module', () => {
   describe('totalFollowers', () => {
     it('should return the total number of followers', async () => {
       axios.get.mockResolvedValueOnce((url, config) => {
-        if (url.includes(`/followers`) {
+        if (url.includes(`/followers`)) {
           return Promise.resolve({
             data: [
               { login: 'follower1' },
@@ -103,7 +99,7 @@ describe('Follow Back Module', () => {
       expect(result).toBe(3);
 
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/followers',
+        `https://api.github.com/users/${user}/followers`,
         expect.any(Object)
       );
     });
@@ -112,7 +108,7 @@ describe('Follow Back Module', () => {
   describe('totalFollowings', () => {
     it('should return the total number of followings', async () => {
       axios.get.mockResolvedValueOnce((url, config) => {
-        if (url.includes(`/following`) {
+        if (url.includes(`/following`)) {
           return Promise.resolve({
             data: [{ login: 'following1' }, { login: 'following2' }],
          };
@@ -122,7 +118,7 @@ describe('Follow Back Module', () => {
       expect(result).toBe(2);
 
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/following',
+        `https://api.github.com/users/${user}/following`,
         expect.any(Object)
       );
     });
@@ -148,11 +144,11 @@ describe('Follow Back Module', () => {
       expect(result).toEqual(['following1']);
 
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/followers',
+        `https://api.github.com/users/${user}/followers`,
         expect.any(Object)
       );
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/following',
+        `https://api.github.com/users/${user}/following`,
         expect.any(Object)
       );
     });
@@ -177,11 +173,11 @@ describe('Follow Back Module', () => {
       expect(result).toEqual(['following2']);
 
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/followers',
+        `https://api.github.com/users/${user}/followers`,
         expect.any(Object)
       );
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/following',
+        `https://api.github.com/users/${user}/following`,
         expect.any(Object)
       );
     });
@@ -207,11 +203,11 @@ describe('Follow Back Module', () => {
       expect(result).toBe('Yes, follower1 following back!');
 
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/followers',
+        `https://api.github.com/users/${user}/followers`,
         expect.any(Object)
       );
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/following',
+        `https://api.github.com/users/${user}/following`,
         expect.any(Object)
       );
     });
@@ -234,11 +230,11 @@ describe('Follow Back Module', () => {
       expect(result).toBe('No, follower3 does not following back!');
 
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/followers',
+        `https://api.github.com/users/${user}/followers`,
         expect.any(Object)
       );
       expect(axios.get).toHaveBeenCalledWith(
-        'https://api.github.com/user/following',
+        `https://api.github.com/users/${user}/following`,
         expect.any(Object)
       );
     });
@@ -308,4 +304,76 @@ describe('Follow Back Module', () => {
       );
     });
   });
+
+  describe('unfollowAllNotFollowingBack', () => {
+    it('should unfollow all users who are not following back', async () => {
+      // Mock response for followers and followings
+      axios.get.mockImplementationOnce((url, config) => {
+        if (url.includes('/followers')) {
+          return Promise.resolve({
+            data: [{ login: 'follower1' }, { login: 'follower2' }],
+          });
+        } else if (url.includes('/following')) {
+          return Promise.resolve({
+            data: [{ login: 'following1' }, { login: 'following2' }],
+          });
+        }
+      });
+  
+      axios.delete.mockResolvedValueOnce({ status: 204 });
+  
+      await followBack(user, token).unfollowAllNotFollowingBack();
+  
+      // Ensure axios.delete was called with the correct URLs for unfollowing
+      expect(axios.delete).toHaveBeenCalledTimes(2); // Assuming there are two users to unfollow
+      expect(axios.delete).toHaveBeenCalledWith(
+        'https://api.github.com/user/following/following1',
+        expect.any(Object)
+      );
+      expect(axios.delete).toHaveBeenCalledWith(
+        'https://api.github.com/user/following/following2',
+        expect.any(Object)
+      );
+  
+      // Ensure axios.get was called with the correct URLs for followers and followings
+      expect(axios.get).toHaveBeenCalledWith(
+        `https://api.github.com/users/${user}/followers`,
+        expect.any(Object)
+      );
+      expect(axios.get).toHaveBeenCalledWith(
+        `https://api.github.com/users/${user}/following`,
+        expect.any(Object)
+      );
+    });
+  
+    it('should not unfollow if all users are following back', async () => {
+      // Mock response for followers and followings
+      axios.get.mockImplementationOnce((url, config) => {
+        if (url.includes('/followers')) {
+          return Promise.resolve({
+            data: [{ login: 'follower1' }, { login: 'follower2' }],
+          });
+        } else if (url.includes('/following')) {
+          return Promise.resolve({
+            data: [{ login: 'follower1' }, { login: 'follower2' }],
+          });
+        }
+      });
+  
+      await followBack(user, token).unfollowAllNotFollowingBack();
+  
+      // Ensure axios.delete was not called since all users are following back
+      expect(axios.delete).not.toHaveBeenCalled();
+  
+      // Ensure axios.get was called with the correct URLs for followers and followings
+      expect(axios.get).toHaveBeenCalledWith(
+        `https://api.github.com/users/${user}/followers`,
+        expect.any(Object)
+      );
+      expect(axios.get).toHaveBeenCalledWith(
+        `https://api.github.com/users/${user}/following`,
+        expect.any(Object)
+      );
+    });
+  });  
 });
