@@ -25,7 +25,7 @@ const axios = require('axios');
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
 function followBack(yourUsername, yourToken) {
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); // Introduce a delay between API requests
+  //const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); // Introduce a delay between API requests
 
   /**
    * Retrieves all followers of the specified user.
@@ -60,7 +60,7 @@ function followBack(yourUsername, yourToken) {
         // Extract and store usernames of followers
         followers.push(...data.map(({ login }) => login));
         page++;
-        await delay(1000); // Introduce a delay between API requests
+        //await delay(1000); // Introduce a delay between API requests
       } catch (error) {
         // Handle Axios errors
         handleAxiosError(error);
@@ -104,7 +104,7 @@ function followBack(yourUsername, yourToken) {
         // Extract and store usernames of following
         following.push(...data.map(({ login }) => login));
         page++;
-        await delay(1000); // Introduce a delay between API requests        
+        //await delay(1000); // Introduce a delay between API requests        
       } catch (error) {
         // Handle Axios errors
         handleAxiosError(error);
@@ -279,7 +279,7 @@ function followBack(yourUsername, yourToken) {
           // Handle errors during unfollowing
           console.error(`Failed to unfollow: ${user}`);
         }
-        await delay(1000); // Introduce a delay between API requests       
+        //await delay(1000); // Introduce a delay between API requests       
       }
       console.log('Finished not following back users!');
     },
