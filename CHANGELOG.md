@@ -48,6 +48,6 @@ fixed some issues and configured files for publishing if-follow-package v1.1.0 o
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.0.1...HEAD)
-- [1.0.1](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.0.1)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.1.0...HEAD)
+- [v1.1.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.1.0)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
