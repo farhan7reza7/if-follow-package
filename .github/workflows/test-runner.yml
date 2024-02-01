@@ -25,7 +25,13 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
+     
+      - name: Run Source Code
+        run: node follow-back.js
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          USER: ${{ secrets.USER }}     
+      
       - name: Run tests
         run: |
           echo "TOKEN: $token"
@@ -34,4 +40,3 @@ jobs:
         env:
           token: ${{ secrets.TOKEN }}
           user: ${{ secrets.USER }}
-          
