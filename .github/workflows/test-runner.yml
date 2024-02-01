@@ -25,4 +25,6 @@ jobs:
         env:
           token: ${{ secrets.TOKEN }}
           user: ${{ secrets.USER }}
+      - name: Post-test cleanup
+        run: git clean -fdX
           
