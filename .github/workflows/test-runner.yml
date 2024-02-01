@@ -17,5 +17,5 @@ jobs:
       - run: npm ci
       - run: npm test
         env:
-          TOKEN: ${{ secrets.TOKEN }}
-          USER: ${{ secrets.USER }}
+          token: ${{ secrets.TOKEN }}
+          user: ${{ secrets.USER }}
