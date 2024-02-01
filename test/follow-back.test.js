@@ -80,7 +80,7 @@ describe('Follow Back Module', () => {
   describe('totalFollowers', () => {
     it('should return the total number of followers', async () => {
       const result = await followBack(user, token).totalFollowers();
-      expect(result).toBe(1);
+      expect(result).toBe(3);
     });
   });
 
@@ -88,7 +88,7 @@ describe('Follow Back Module', () => {
   describe('totalFollowings', () => {
     it('should return the total number of followings', async () => {
       const result = await followBack(user, token).totalFollowings();
-      expect(result).toBe(3);
+      expect(result).toBe(1);
     });
   });
 
