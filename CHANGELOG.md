@@ -32,6 +32,18 @@ and follows the guidelines from [Keep a Changelog](https://keepachangelog.com/).
 
 fixed some issues and configured files for v1.0.1
 
+### [v1.1.0]
+
+#### Added
+
+- Improved handling of methods outcomes.
+- Updated readme.md for methods resolved outcome.
+
+#### Fixed
+
+fixed some issues and configured files for publishing if-follow-package v1.1.0 on npm registry
+
+
 ### [Next Release] - Collecting issues and new features for release
 
 ### Important changes links:
