@@ -4,8 +4,8 @@ const { TOKEN: token, USER: user } = process.env;
 
 describe('Follow Back Module', () => {
   // Mocking axios calls
-  jest.mock('axios');
   const axios = require('axios');
+  jest.mock('axios');
 
   beforeEach(() => {
     axios.get.mockReset();
