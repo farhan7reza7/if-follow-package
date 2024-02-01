@@ -1,5 +1,7 @@
 const followBack = require('../src/follow-back'); // Import the module to be tested
 
+require('dotenv').config();
+
 const { TOKEN: token, USER: user } = process.env;
 
 describe('Follow Back Module', () => {
@@ -104,7 +106,7 @@ describe('Follow Back Module', () => {
   describe('whoFollowingBack', () => {
     it('should return users who are following back', async () => {
       const result = await followBack(user, token).whoFollowingBack();
-      expect(result).toEqual(["farhan7reza7"]);
+      expect(result).toEqual(['farhan7reza7']);
     });
   });
 
@@ -134,7 +136,7 @@ describe('Follow Back Module', () => {
       await followBack(user, token).unfollowNotFollowingBack(
         'diff-ymd-package',
       );
-      expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
+      expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming one user unfollowed
     });
   });
 
