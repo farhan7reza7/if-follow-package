@@ -1,9 +1,6 @@
 // Importing required modules
 const axios = require('axios');
-require('dotenv').config();
-
-// Retrieving GitHub credentials from environment variables
-const { USER: username, TOKEN: token } = process.env;
+//require('dotenv').config();
 
 /**
  * Module for managing followers and followings on GitHub.
@@ -28,7 +25,7 @@ const { USER: username, TOKEN: token } = process.env;
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-function followBack(yourUsername = username, yourToken = token) {
+function followBack(yourUsername, yourToken) {
   /**
    * Retrieves all followers of the specified user.
    * @private
@@ -145,7 +142,7 @@ function followBack(yourUsername = username, yourToken = token) {
       const message = followers.includes(username)
         ? `Yes, ${username} follows you!`
         : `No, ${username} does not follow you!`;
-      console.log(message);
+      //console.log(message);
       return message;
     },
 
@@ -159,7 +156,7 @@ function followBack(yourUsername = username, yourToken = token) {
       const message = following.includes(username)
         ? `Yes, you follow ${username}!`
         : `No, you do not follow ${username}!`;
-      console.log(message);
+      //console.log(message);
       return message;
     },
 
@@ -219,7 +216,7 @@ function followBack(yourUsername = username, yourToken = token) {
       const message = followingBacks.includes(username)
         ? `Yes, ${username} following back!`
         : `No, ${username} does not following back!`;
-      console.log(message);
+      //console.log(message);
       return message;
     },
 
@@ -253,7 +250,7 @@ function followBack(yourUsername = username, yourToken = token) {
         }
       } else {
         console.log(
-          `Sorry, ${username} is not a user who is not following you back`,
+          `Sorry, ${username} is not in not-following-back users`,
         );
       }
     },
@@ -282,6 +279,7 @@ function followBack(yourUsername = username, yourToken = token) {
           console.error(`Failed to unfollow: ${user}`);
         }
       }
+      console.log("Finished not following back users!");
     },
   };
 }
