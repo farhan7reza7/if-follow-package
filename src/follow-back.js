@@ -124,7 +124,7 @@ function followBack(yourUsername, yourToken) {
       if (error.response) {
         // The request was made, but the server responded with an error
         console.error(
-          `API Error: ${error.response.status} - ${error.response.data.message || 'No error message available'}`,
+          `API Error: ${error.response.status} - ${error.response.data.message || 'No error message available'}`
         );
       } else if (error.request) {
         // The request was made, but no response was received
