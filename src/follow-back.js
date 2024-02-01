@@ -3,7 +3,13 @@ const axios = require('axios');
 require("dotenv").config();
 
 const { TOKEN: token, USER: user } = process.env;
+// Use 'token' and 'user' wherever needed in your code
+console.log("TOKENJ:", token);
+console.log("USERJ:", user);
 
+// Access the variables within the module
+console.log("TOKEN in testsJ:", process.env.TOKEN);
+console.log("USER in testsJ:", process.env.USER);
 
 /**
  * Module for managing followers and followings on GitHub.
