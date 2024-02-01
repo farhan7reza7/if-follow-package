@@ -32,7 +32,7 @@ jobs:
           #echo "USER: $user"
           #npm test
         #run: npm run script-t
-        run: npm jest
+        run: npm test
         env:
           TOKEN: ${{ secrets.TOKEN }}
           USER: ${{ secrets.USER }}
