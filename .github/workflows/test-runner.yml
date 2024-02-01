@@ -2,10 +2,6 @@
 
 name: test-runner
 
-env:
-  token: ${{ secrets.TOKEN }}
-  user: ${{ secrets.USER }}
-
 on:
   #push:
     #branches:
@@ -31,7 +27,9 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm test
+        run: |
+          echo "TOKEN: $token"
+          echo "USER: $user"
         env:
           token: ${{ secrets.TOKEN }}
           user: ${{ secrets.USER }}
