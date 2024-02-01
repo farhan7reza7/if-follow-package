@@ -2,6 +2,8 @@ const followBack = require('../src/follow-back');
 const axios = require('axios');
 
 const { TOKEN: token, USER: user } = process.env;
+console.log("TOKEN:", process.env.TOKEN);
+console.log("USER:", process.env.USER);
 
 jest.mock('axios');
 
