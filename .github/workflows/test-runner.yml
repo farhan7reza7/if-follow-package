@@ -30,6 +30,7 @@ jobs:
         run: |
           echo "TOKEN: $token"
           echo "USER: $user"
+          npm test
         env:
           token: ${{ secrets.TOKEN }}
           user: ${{ secrets.USER }}
