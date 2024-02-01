@@ -126,7 +126,7 @@ describe('Follow Back Module', () => {
     });
   });
 
-  /*// Test case to check unfollowing a user who is not following back
+  // Test case to check unfollowing a user who is not following back
   describe('unfollowNotFollowingBack', () => {
     it('should unfollow a user who is not following back', async () => {
       axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
@@ -146,5 +146,5 @@ describe('Follow Back Module', () => {
       await followBack(user, token).unfollowAllNotFollowingBack();
       expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
     });
-  });*/
+  });
 });
