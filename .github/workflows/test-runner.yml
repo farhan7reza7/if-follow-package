@@ -31,7 +31,8 @@ jobs:
           #echo "TOKEN: $token"
           #echo "USER: $user"
           #npm test
-        run: npm run script-t
+        #run: npm run script-t
+        run: npm jest
         env:
-          token: ${{ secrets.TOKEN }}
-          user: ${{ secrets.USER }}
+          TOKEN: ${{ secrets.TOKEN }}
+          USER: ${{ secrets.USER }}
