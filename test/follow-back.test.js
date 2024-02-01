@@ -16,7 +16,8 @@ describe('Follow Back Module', () => {
         if (url.includes('/followers')) {
           return Promise.resolve({
             data: [{ login: 'farhan7reza7' }],
-         });
+          });
+        }
       });
 
       const result = await followBack(user, token).isFollower('farhan7reza7');
@@ -33,7 +34,8 @@ describe('Follow Back Module', () => {
         if (url.includes(`/followers`)) {
           return Promise.resolve({
             data: [{ login: 'follower1' }, { login: 'follower2' }],
-         });
+          });
+        }
       });
 
       const result = await followBack(user, token).isFollower('farhan7reza7');
@@ -52,7 +54,8 @@ describe('Follow Back Module', () => {
         if (url.includes(`/following`)) {
           return Promise.resolve({
             data: [{ login: 'farhan7reza7' }, { login: 'follower1' }],
-         });
+          });
+        }
       });
       
       const result = await followBack(user, token).isFollowing('farhan7reza7');
@@ -69,7 +72,8 @@ describe('Follow Back Module', () => {
         if (url.includes(`/following`)) {
           return Promise.resolve({
             data: [{ login: 'follower2' }, { login: 'follower3' }],
-         });
+          });
+        }
       });
       
       const result = await followBack(user, token).isFollowing('farhan7reza7');
@@ -92,7 +96,8 @@ describe('Follow Back Module', () => {
               { login: 'follower2' },
               { login: 'follower3' },
             ],           
-         });
+          });
+        }
       });
       
       const result = await followBack(user, token).totalFollowers();
@@ -111,7 +116,8 @@ describe('Follow Back Module', () => {
         if (url.includes(`/following`)) {
           return Promise.resolve({
             data: [{ login: 'following1' }, { login: 'following2' }],
-         });
+          });
+        }
       });     
       
       const result = await followBack(user, token).totalFollowings();
