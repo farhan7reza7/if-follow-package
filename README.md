@@ -273,7 +273,7 @@ const result12 = followController.unfollowAllNotFollowingBack();
                                     "Unfollowed: usernameN"*/
      
 // not return anything, and internally log message, just only call
-result12..then((result) => {
+result12.then((result) => {
   console.log(result); // Output: "undefined"
 });       
  
