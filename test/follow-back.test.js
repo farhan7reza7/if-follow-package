@@ -2,8 +2,14 @@ const followBack = require('../src/follow-back');
 const axios = require('axios');
 
 const { TOKEN: token, USER: user } = process.env;
-console.log("TOKEN:", process.env.TOKEN);
-console.log("USER:", process.env.USER);
+// Use 'token' and 'user' wherever needed in your code
+console.log("TOKEN:", token);
+console.log("USER:", user);
+
+// Access the variables within the module
+console.log("TOKEN in tests:", process.env.TOKEN);
+console.log("USER in tests:", process.env.USER);
+
 
 jest.mock('axios');
 
