@@ -1,9 +1,6 @@
 const followBack = require('../src/follow-back'); // Import the module to be tested
-//require('dotenv').config();
-//const { TOKEN: token, USER: user} = process.env;
-
-const token = process.env.TOKEN;
-const user = process.env.USER;
+require('dotenv').config();
+const { TOKEN: token, USER: user } = process.env;
 
 describe('Follow Back Module', () => {
   // Mocking axios calls
@@ -52,13 +49,15 @@ describe('Follow Back Module', () => {
   describe('isFollower', () => {
     // Test case to check if a user is a follower
     it('should return true if the user is a follower', async () => {
-      const result = await followBack(token, user).isFollower('farhan7reza7');
+      const result = await followBack(user, token).isFollower('farhan7reza7');
       expect(result).toBe('Yes, farhan7reza7 follows you!');
     });
 
     // Test case to check if a user is not a follower
     it('should return false if the user is not a follower', async () => {
-      const result = await followBack(token, user).isFollower('diff-ymd-package');
+      const result = await followBack(user, token).isFollower(
+        'diff-ymd-package',
+      );
       expect(result).toBe('No, diff-ymd-package does not follow you!');
     });
   });
@@ -66,13 +65,13 @@ describe('Follow Back Module', () => {
   describe('isFollowing', () => {
     // Test case to check if a user is followed
     it('should return true if the user is followed', async () => {
-      const result = await followBack(token, user).isFollowing('farhan7reza7');
+      const result = await followBack(user, token).isFollowing('farhan7reza7');
       expect(result).toBe('Yes, you follow farhan7reza7!');
     });
 
     // Test case to check if a user is not followed
     it('should return false if the user is not followed', async () => {
-      const result = await followBack(token, user).isFollowing('anaseem80');
+      const result = await followBack(user, token).isFollowing('anaseem80');
       expect(result).toBe('No, you do not follow anaseem80!');
     });
   });
@@ -80,7 +79,7 @@ describe('Follow Back Module', () => {
   // Test case for the total number of followers
   describe('totalFollowers', () => {
     it('should return the total number of followers', async () => {
-      const result = await followBack(token, user).totalFollowers();
+      const result = await followBack(user, token).totalFollowers();
       expect(result).toBe(3);
     });
   });
@@ -88,7 +87,7 @@ describe('Follow Back Module', () => {
   // Test case for the total number of followings
   describe('totalFollowings', () => {
     it('should return the total number of followings', async () => {
-      const result = await followBack(token, user).totalFollowings();
+      const result = await followBack(user, token).totalFollowings();
       expect(result).toBe(3);
     });
   });
@@ -96,7 +95,7 @@ describe('Follow Back Module', () => {
   // Test case for users who are not following back
   describe('whoNotFollowingBack', () => {
     it('should return users who are not following back', async () => {
-      const result = await followBack(token, user).whoNotFollowingBack();
+      const result = await followBack(user, token).whoNotFollowingBack();
       expect(result).toEqual(['diff-ymd-package', 'Open-Sourced-Org']);
     });
   });
@@ -104,7 +103,7 @@ describe('Follow Back Module', () => {
   // Test case for users who are following back
   describe('whoFollowingBack', () => {
     it('should return users who are following back', async () => {
-      const result = await followBack(token, user).whoFollowingBack();
+      const result = await followBack(user, token).whoFollowingBack();
       expect(result).toEqual(['farhan7reza7']);
     });
   });
@@ -112,13 +111,17 @@ describe('Follow Back Module', () => {
   // Test case to check if a user is following back
   describe('isFollowingBack', () => {
     it('should return true if the user is following back', async () => {
-      const result = await followBack(token, user).isFollowingBack('farhan7reza7');
+      const result = await followBack(user, token).isFollowingBack(
+        'farhan7reza7',
+      );
       expect(result).toBe('Yes, farhan7reza7 following back!');
     });
 
     // Test case to check if a user is not following back
     it('should return false if the user is not following back', async () => {
-      const result = await followBack(token, user).isFollowingBack('diff-ymd-package');
+      const result = await followBack(user, token).isFollowingBack(
+        'diff-ymd-package',
+      );
       expect(result).toBe('No, diff-ymd-package does not following back!');
     });
   });
@@ -128,7 +131,9 @@ describe('Follow Back Module', () => {
     it('should unfollow a user who is not following back', async () => {
       axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
 
-      await followBack(token, user).unfollowNotFollowingBack('diff-ymd-package');
+      await followBack(user, token).unfollowNotFollowingBack(
+        'diff-ymd-package',
+      );
       expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
     });
   });
@@ -138,10 +143,8 @@ describe('Follow Back Module', () => {
     it('should unfollow all users who are not following back', async () => {
       axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
 
-      await followBack(token, user).unfollowAllNotFollowingBack();
+      await followBack(user, token).unfollowAllNotFollowingBack();
       expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
     });
-  });  
+  });
 });
-
-
