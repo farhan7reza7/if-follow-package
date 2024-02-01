@@ -1,150 +1,283 @@
-const followBack = require('../src/follow-back'); // Import the module to be tested
-//require('dotenv').config();
-const { TOKEN: token, USER: user } = process.env;
+const followBack = require('../src/follow-back');
+const axios = require('axios');
+
+jest.mock('axios');
 
 describe('Follow Back Module', () => {
-  // Mocking axios calls
-  jest.mock('axios');
-  const axios = require('axios');
-
   beforeEach(() => {
-    axios.get.mockReset();
-    axios.delete.mockReset();
-  });
-
-  afterEach(() => {
     jest.clearAllMocks();
   });
 
-  // Mocking axios.get method
-  axios.get.mockImplementation(async (url, config) => {
-    // Mocking GitHub API responses
-    if (url.includes('/followers')) {
-      // Mock followers response
-      return {
-        data: [
-          { login: 'farhan7reza7' },
-          { login: 'Adele7731' },
-          { login: 'anaseem80' },
-          { login: 'follower4' },
-        ],
-      };
-    } else if (url.includes('/following')) {
-      // Mock following response
-      return {
-        data: [
-          { login: 'farhan7reza7' },
-          { login: 'diff-ymd-package' },
-          { login: 'Open-Sourced-Org' },
-          { login: 'following4' },
-          { login: 'following5' },
-        ],
-      };
-    }
-  });
-
-  // Mocking axios.delete method
-  axios.delete.mockImplementation(async (url, config) => {});
-
   describe('isFollower', () => {
-    // Test case to check if a user is a follower
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return true if the user is a follower', async () => {
-      const result = await followBack(user, token).isFollower('farhan7reza7');
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'farhan7reza7' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollower('farhan7reza7');
       expect(result).toBe('Yes, farhan7reza7 follows you!');
     });
-
-    // Test case to check if a user is not a follower
+  
     it('should return false if the user is not a follower', async () => {
-      const result = await followBack(user, token).isFollower(
-        'diff-ymd-package',
-      );
-      expect(result).toBe('No, diff-ymd-package does not follow you!');
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollower('farhan7reza7');
+      expect(result).toBe('No, farhan7reza7 does not follow you!');
+    });
+  
+    it('should return true for a different follower', async () => {
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower3' }, { login: 'follower4' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollower('follower3');
+      expect(result).toBe('Yes, follower3 follows you!');
+    });
+  
+    it('should return false for a different non-follower', async () => {
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower5' }, { login: 'follower6' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollower('follower7');
+      expect(result).toBe('No, follower7 does not follow you!');
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
-
+  
+  
   describe('isFollowing', () => {
-    // Test case to check if a user is followed
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return true if the user is followed', async () => {
-      const result = await followBack(user, token).isFollowing('farhan7reza7');
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'farhan7reza7' }, { login: 'follower1' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollowing('farhan7reza7');
       expect(result).toBe('Yes, you follow farhan7reza7!');
     });
-
-    // Test case to check if a user is not followed
+  
     it('should return false if the user is not followed', async () => {
-      const result = await followBack(user, token).isFollowing('anaseem80');
-      expect(result).toBe('No, you do not follow anaseem80!');
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower2' }, { login: 'follower3' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollowing('farhan7reza7');
+      expect(result).toBe('No, you do not follow farhan7reza7!');
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
 
-  // Test case for the total number of followers
   describe('totalFollowers', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return the total number of followers', async () => {
-      const result = await followBack(user, token).totalFollowers();
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }, { login: 'follower3' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').totalFollowers();
       expect(result).toBe(3);
     });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
   });
-
-  // Test case for the total number of followings
+  
   describe('totalFollowings', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return the total number of followings', async () => {
-      const result = await followBack(user, token).totalFollowings();
-      expect(result).toBe(3);
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').totalFollowings();
+      expect(result).toBe(2);
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
-
-  // Test case for users who are not following back
+  
   describe('whoNotFollowingBack', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return users who are not following back', async () => {
-      const result = await followBack(user, token).whoNotFollowingBack();
-      expect(result).toEqual(['diff-ymd-package', 'Open-Sourced-Org']);
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').whoNotFollowingBack();
+      expect(result).toEqual(['follower1', 'follower2']);
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
-
-  // Test case for users who are following back
+  
   describe('whoFollowingBack', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return users who are following back', async () => {
-      const result = await followBack(user, token).whoFollowingBack();
-      expect(result).toEqual(['farhan7reza7']);
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').whoFollowingBack();
+      expect(result).toEqual(['follower1', 'follower2']);
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
-
-  // Test case to check if a user is following back
+  
   describe('isFollowingBack', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should return true if the user is following back', async () => {
-      const result = await followBack(user, token).isFollowingBack(
-        'farhan7reza7',
-      );
-      expect(result).toBe('Yes, farhan7reza7 following back!');
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollowingBack('follower1');
+      expect(result).toBe('Yes, follower1 following back!');
     });
-
-    // Test case to check if a user is not following back
+  
     it('should return false if the user is not following back', async () => {
-      const result = await followBack(user, token).isFollowingBack(
-        'diff-ymd-package',
-      );
-      expect(result).toBe('No, diff-ymd-package does not following back!');
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      const result = await followBack('yourUsername', 'yourToken').isFollowingBack('follower3');
+      expect(result).toBe('No, follower3 does not following back!');
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
-
-  // Test case to check unfollowing a user who is not following back
+  
   describe('unfollowNotFollowingBack', () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+    });
+  
     it('should unfollow a user who is not following back', async () => {
-      axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
-
-      await followBack(user, token).unfollowNotFollowingBack(
-        'diff-ymd-package',
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+      axios.delete.mockResolvedValueOnce({ status: 204 });
+  
+      await followBack('yourUsername', 'yourToken').unfollowNotFollowingBack('follower1');
+      expect(axios.delete).toHaveBeenCalledTimes(1);
+      expect(axios.delete).toHaveBeenCalledWith(
+        'https://api.github.com/user/following/follower1',
+        expect.any(Object)
       );
-      expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
+    });
+  
+    it('should not unfollow if the user is following back', async () => {
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      await followBack('yourUsername', 'yourToken').unfollowNotFollowingBack('follower2');
+      expect(axios.delete).not.toHaveBeenCalled();
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
     });
   });
-
-  // Test case to check unfollowing all users who are not following back
+  
   describe('unfollowAllNotFollowingBack', () => {
-    it('should unfollow all users who are not following back', async () => {
-      axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
-
-      await followBack(user, token).unfollowAllNotFollowingBack();
-      expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
+    beforeEach(() => {
+      jest.clearAllMocks();
     });
-  });
+  
+    it('should unfollow all users who are not following back', async () => {
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+      axios.delete.mockResolvedValueOnce({ status: 204 });
+  
+      await followBack('yourUsername', 'yourToken').unfollowAllNotFollowingBack();
+      expect(axios.delete).toHaveBeenCalledTimes(2); // Assuming there are two users to unfollow
+      expect(axios.delete).toHaveBeenCalledWith(
+        'https://api.github.com/user/following/follower1',
+        expect.any(Object)
+      );
+      expect(axios.delete).toHaveBeenCalledWith(
+        'https://api.github.com/user/following/follower2',
+        expect.any(Object)
+      );
+    });
+  
+    it('should not unfollow if all users are following back', async () => {
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'follower1' }, { login: 'follower2' }],
+      });
+      axios.get.mockResolvedValueOnce({
+        data: [{ login: 'following1' }, { login: 'following2' }],
+      });
+  
+      await followBack('yourUsername', 'yourToken').unfollowAllNotFollowingBack();
+      expect(axios.delete).not.toHaveBeenCalled();
+    });
+  
+    afterAll(() => {
+      jest.clearAllMocks();
+    });
+  });  
 });
