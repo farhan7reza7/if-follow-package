@@ -7,12 +7,12 @@ env:
   user: ${{ secrets.USER }}
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
+  #pull_request:
+    #branches:
+      #- main
   workflow_dispatch:
   
 jobs:
