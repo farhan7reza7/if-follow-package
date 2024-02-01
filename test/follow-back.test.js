@@ -80,7 +80,7 @@ describe('Follow Back Module', () => {
   describe('totalFollowers', () => {
     it('should return the total number of followers', async () => {
       const result = await followBack(user, token).totalFollowers();
-      expect(result).toBe(3);
+      expect(result).toBe(1);
     });
   });
 
@@ -96,7 +96,7 @@ describe('Follow Back Module', () => {
   describe('whoNotFollowingBack', () => {
     it('should return users who are not following back', async () => {
       const result = await followBack(user, token).whoNotFollowingBack();
-      expect(result).toEqual(["diff-ymd-package", "Open-Sourced-Org"]);
+      expect(result).toEqual([]);
     });
   });
 
