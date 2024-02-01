@@ -134,7 +134,9 @@ function followBack(yourUsername, yourToken) {
         console.error(`Error: ${error.message || "No error message available"}`);
       }
     } else {
-      console.error(`Non-Axios Error: ${error.message || "No error message available"}`);
+      //console.error(`Non-Axios Error: ${error.message || "No error message available"}`);
+      console.error(`Non-Axios Error`);
+
     }
   }
 
