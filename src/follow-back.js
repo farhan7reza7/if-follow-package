@@ -1,5 +1,9 @@
 // Importing required modules
 const axios = require('axios');
+require("dotenv").config();
+
+const { TOKEN: token, USER: user } = process.env;
+
 
 /**
  * Module for managing followers and followings on GitHub.
@@ -24,7 +28,7 @@ const axios = require('axios');
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-function followBack(yourUsername, yourToken) {
+function followBack(yourUsername=user, yourToken=token) {
   //const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); // Introduce a delay between API requests
 
   /**
