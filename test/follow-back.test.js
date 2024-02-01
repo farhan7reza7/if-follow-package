@@ -1,6 +1,8 @@
 const followBack = require('../src/follow-back');
 const axios = require('axios');
 
+const { TOKEN: token, USER: user } = process.env;
+
 jest.mock('axios');
 
 describe('Follow Back Module', () => {
@@ -18,7 +20,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'farhan7reza7' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollower('farhan7reza7');
+      const result = await followBack(user, token).isFollower('farhan7reza7');
       expect(result).toBe('Yes, farhan7reza7 follows you!');
     });
   
@@ -27,7 +29,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'follower1' }, { login: 'follower2' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollower('farhan7reza7');
+      const result = await followBack(user, token).isFollower('farhan7reza7');
       expect(result).toBe('No, farhan7reza7 does not follow you!');
     });
   
@@ -36,7 +38,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'follower3' }, { login: 'follower4' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollower('follower3');
+      const result = await followBack(user, token).isFollower('follower3');
       expect(result).toBe('Yes, follower3 follows you!');
     });
   
@@ -45,7 +47,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'follower5' }, { login: 'follower6' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollower('follower7');
+      const result = await followBack(user, token).isFollower('follower7');
       expect(result).toBe('No, follower7 does not follow you!');
     });
   
@@ -65,7 +67,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'farhan7reza7' }, { login: 'follower1' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollowing('farhan7reza7');
+      const result = await followBack(user, token).isFollowing('farhan7reza7');
       expect(result).toBe('Yes, you follow farhan7reza7!');
     });
   
@@ -74,7 +76,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'follower2' }, { login: 'follower3' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollowing('farhan7reza7');
+      const result = await followBack(user, token).isFollowing('farhan7reza7');
       expect(result).toBe('No, you do not follow farhan7reza7!');
     });
   
@@ -93,7 +95,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'follower1' }, { login: 'follower2' }, { login: 'follower3' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').totalFollowers();
+      const result = await followBack(user, token).totalFollowers();
       expect(result).toBe(3);
     });
   
@@ -112,7 +114,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').totalFollowings();
+      const result = await followBack(user, token).totalFollowings();
       expect(result).toBe(2);
     });
   
@@ -134,7 +136,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').whoNotFollowingBack();
+      const result = await followBack(user, token).whoNotFollowingBack();
       expect(result).toEqual(['follower1', 'follower2']);
     });
   
@@ -156,7 +158,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').whoFollowingBack();
+      const result = await followBack(user, token).whoFollowingBack();
       expect(result).toEqual(['follower1', 'follower2']);
     });
   
@@ -178,7 +180,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollowingBack('follower1');
+      const result = await followBack(user, token).isFollowingBack('follower1');
       expect(result).toBe('Yes, follower1 following back!');
     });
   
@@ -190,7 +192,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      const result = await followBack('yourUsername', 'yourToken').isFollowingBack('follower3');
+      const result = await followBack(user, token).isFollowingBack('follower3');
       expect(result).toBe('No, follower3 does not following back!');
     });
   
@@ -213,7 +215,7 @@ describe('Follow Back Module', () => {
       });
       axios.delete.mockResolvedValueOnce({ status: 204 });
   
-      await followBack('yourUsername', 'yourToken').unfollowNotFollowingBack('follower1');
+      await followBack(user, token).unfollowNotFollowingBack('follower1');
       expect(axios.delete).toHaveBeenCalledTimes(1);
       expect(axios.delete).toHaveBeenCalledWith(
         'https://api.github.com/user/following/follower1',
@@ -229,7 +231,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      await followBack('yourUsername', 'yourToken').unfollowNotFollowingBack('follower2');
+      await followBack(user, token).unfollowNotFollowingBack('follower2');
       expect(axios.delete).not.toHaveBeenCalled();
     });
   
@@ -252,7 +254,7 @@ describe('Follow Back Module', () => {
       });
       axios.delete.mockResolvedValueOnce({ status: 204 });
   
-      await followBack('yourUsername', 'yourToken').unfollowAllNotFollowingBack();
+      await followBack(user, token).unfollowAllNotFollowingBack();
       expect(axios.delete).toHaveBeenCalledTimes(2); // Assuming there are two users to unfollow
       expect(axios.delete).toHaveBeenCalledWith(
         'https://api.github.com/user/following/follower1',
@@ -272,7 +274,7 @@ describe('Follow Back Module', () => {
         data: [{ login: 'following1' }, { login: 'following2' }],
       });
   
-      await followBack('yourUsername', 'yourToken').unfollowAllNotFollowingBack();
+      await followBack(user, token).unfollowAllNotFollowingBack();
       expect(axios.delete).not.toHaveBeenCalled();
     });
   
