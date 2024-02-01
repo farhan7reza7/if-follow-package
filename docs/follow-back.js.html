@@ -1,6 +1,37 @@
-// Importing required modules
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: follow-back.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: follow-back.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// Importing required modules
 const axios = require('axios');
-//require('dotenv').config();
+require('dotenv').config();
+
+// Retrieving GitHub credentials from environment variables
+const { USER: username, TOKEN: token } = process.env;
 
 /**
  * Module for managing followers and followings on GitHub.
@@ -25,11 +56,11 @@ const axios = require('axios');
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-function followBack(yourUsername, yourToken) {
+function followBack(yourUsername = username, yourToken = token) {
   /**
    * Retrieves all followers of the specified user.
    * @private
-   * @returns {Promise<Array<string>>} An array of usernames of followers.
+   * @returns {Promise&lt;Array&lt;string>>} An array of usernames of followers.
    */
   async function getAllFollowers() {
     const followers = [];
@@ -72,7 +103,7 @@ function followBack(yourUsername, yourToken) {
   /**
    * Retrieves all users that the specified user is following.
    * @private
-   * @returns {Promise<Array<string>>} An array of usernames of users being followed.
+   * @returns {Promise&lt;Array&lt;string>>} An array of usernames of users being followed.
    */
   async function getAllFollowing() {
     const following = [];
@@ -135,34 +166,34 @@ function followBack(yourUsername, yourToken) {
     /**
      * Checks if a user is following the authenticated user.
      * @param {string} username - The username to check.
-     * @returns {Promise<string>} A message indicating if the user follows or not.
+     * @returns {Promise&lt;string>} A message indicating if the user follows or not.
      */
     async isFollower(username) {
       const followers = await getAllFollowers();
       const message = followers.includes(username)
         ? `Yes, ${username} follows you!`
         : `No, ${username} does not follow you!`;
-      //console.log(message);
+      console.log(message);
       return message;
     },
 
     /**
      * Checks if the authenticated user is following a given user.
      * @param {string} username - The username to check.
-     * @returns {Promise<string>} A message indicating if the user is followed or not.
+     * @returns {Promise&lt;string>} A message indicating if the user is followed or not.
      */
     async isFollowing(username) {
       const following = await getAllFollowing();
       const message = following.includes(username)
         ? `Yes, you follow ${username}!`
         : `No, you do not follow ${username}!`;
-      //console.log(message);
+      console.log(message);
       return message;
     },
 
     /**
      * Retrieves the total number of followers for the authenticated user.
-     * @returns {Promise<number>} The total number of followers.
+     * @returns {Promise&lt;number>} The total number of followers.
      */
     async totalFollowers() {
       const followers = await getAllFollowers();
@@ -172,7 +203,7 @@ function followBack(yourUsername, yourToken) {
 
     /**
      * Retrieves the total number of users that the authenticated user is following.
-     * @returns {Promise<number>} The total number of followings.
+     * @returns {Promise&lt;number>} The total number of followings.
      */
     async totalFollowings() {
       const following = await getAllFollowing();
@@ -182,7 +213,7 @@ function followBack(yourUsername, yourToken) {
 
     /**
      * Retrieves users that the authenticated user is not following back.
-     * @returns {Promise<Array<string>>} An array of usernames not followed back.
+     * @returns {Promise&lt;Array&lt;string>>} An array of usernames not followed back.
      */
     async whoNotFollowingBack() {
       const followers = await getAllFollowers();
@@ -195,7 +226,7 @@ function followBack(yourUsername, yourToken) {
 
     /**
      * Retrieves users that the authenticated user is following back.
-     * @returns {Promise<Array<string>>} An array of usernames being followed back.
+     * @returns {Promise&lt;Array&lt;string>>} An array of usernames being followed back.
      */
     async whoFollowingBack() {
       const followers = await getAllFollowers();
@@ -209,14 +240,14 @@ function followBack(yourUsername, yourToken) {
     /**
      * Checks if a user is following the authenticated user back.
      * @param {string} username - The username to check.
-     * @returns {Promise<string>} A message indicating if the user is following back or not.
+     * @returns {Promise&lt;string>} A message indicating if the user is following back or not.
      */
     async isFollowingBack(username) {
       const followingBacks = await this.whoFollowingBack();
       const message = followingBacks.includes(username)
         ? `Yes, ${username} following back!`
         : `No, ${username} does not following back!`;
-      //console.log(message);
+      console.log(message);
       return message;
     },
 
@@ -225,7 +256,7 @@ function followBack(yourUsername, yourToken) {
      *
      * @async
      * @param {string} username - The username of the user to unfollow if not following back.
-     * @returns {Promise<void>} A promise that resolves once the user is unfollowed.
+     * @returns {Promise&lt;void>} A promise that resolves once the user is unfollowed.
      */
     async unfollowNotFollowingBack(username) {
       // Get the list of users who are not following back
@@ -250,7 +281,7 @@ function followBack(yourUsername, yourToken) {
         }
       } else {
         console.log(
-          `Sorry, ${username} is not in not-following-back users`,
+          `Sorry, ${username} is not a user who is not following you back`,
         );
       }
     },
@@ -259,7 +290,7 @@ function followBack(yourUsername, yourToken) {
      * Unfollows all users who are not following back.
      *
      * @async
-     * @returns {Promise<void>} A promise that resolves once all users are unfollowed.
+     * @returns {Promise&lt;void>} A promise that resolves once all users are unfollowed.
      */
     async unfollowAllNotFollowingBack() {
       // Get the list of users who are not following back
@@ -279,7 +310,6 @@ function followBack(yourUsername, yourToken) {
           console.error(`Failed to unfollow: ${user}`);
         }
       }
-      console.log("Finished not following back users!");
     },
   };
 }
@@ -292,3 +322,26 @@ function followBack(yourUsername, yourToken) {
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
 module.exports = followBack;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#followBack">followBack</a></li><li><a href="global.html#isFollower">isFollower</a></li><li><a href="global.html#isFollowing">isFollowing</a></li><li><a href="global.html#isFollowingBack">isFollowingBack</a></li><li><a href="global.html#totalFollowers">totalFollowers</a></li><li><a href="global.html#totalFollowings">totalFollowings</a></li><li><a href="global.html#unfollowAllNotFollowingBack">unfollowAllNotFollowingBack</a></li><li><a href="global.html#unfollowNotFollowingBack">unfollowNotFollowingBack</a></li><li><a href="global.html#whoFollowingBack">whoFollowingBack</a></li><li><a href="global.html#whoNotFollowingBack">whoNotFollowingBack</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jan 31 2024 19:56:22 GMT+0530 (India Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
