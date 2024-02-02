@@ -25,6 +25,7 @@ if-follow-package
 [![github-build-published][github-image]][github-url]
 [![CI][ci-image]][ci-url]
 [![License][license-image]][licence-url]
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-farhan7reza7-blue)](https://www.linkedin.com/in/farhan7reza7/)
 
 Installation
 ------------
@@ -147,7 +148,7 @@ const result1 = followController.isFollower('farhan7reza7');
 
 result1.then((result) => {
     console.log(result);  // Output: "Yes, farhan7reza7 follows you!"
-  });
+});
 
 // Test case: user is not a follower
 const result2 = followController.isFollower('diff-ymd-package');
@@ -273,7 +274,7 @@ const result12 = followController.unfollowAllNotFollowingBack();
                                     "Unfollowed: usernameN"*/
      
 // not return anything, and internally log message, just only call
-result12..then((result) => {
+result12.then((result) => {
   console.log(result); // Output: "undefined"
 });       
  
