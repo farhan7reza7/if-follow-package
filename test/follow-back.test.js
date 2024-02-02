@@ -1,6 +1,6 @@
 const followBack = require('../src/follow-back'); // Import the module to be tested
 
-require('dotenv').config();
+//require('dotenv').config();
 
 const { TOKEN: token, USER: user } = process.env;
 
