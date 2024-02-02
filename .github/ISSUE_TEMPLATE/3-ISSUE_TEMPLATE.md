@@ -5,11 +5,11 @@ title: "[ISSUE] "
 labels: ["help wanted"]
 ---
 
-**Welcome to the Issues Page for if-follow-package:**
+<!--**Welcome to the Issues Page for if-follow-package:**-->
 
 <!--If you encounter any problems, bugs, or have suggestions for improvement, please report them here. We appreciate your feedback!-->
 
-#### Before You Report:
+<!--#### Before You Report:-->
 
 <!--
 - Ensure that you are using the latest version of if-follow-package.
