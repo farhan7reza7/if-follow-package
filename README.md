@@ -1,13 +1,31 @@
 if-follow-package
 =================
 
-> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`. This package allows you to `find users who are not following you back`, `unfollow users who are not following you back`, `find users who are following you back`, `check if a user is following you`, `check if you are following a user`, `get the exact total number of followers`, `get the exact total number of followings`, and other follow control features.
+> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`.
+
+**`if-follow-package` allows you the following:**
+- `find users who are not following you back`
+
+- `find users who are following you back`
+
+- `unfollow users who are not following you back`
+
+- `check if a user is following you`
+
+- `check if you are following a user`
+
+- `get the exact total number of followings`
+
+- `get the exact total number of followers`
+
+- `and other follow control features`
 
 [![NPM Version][npm-image]][npm-url]
 [![npm-build-published][npm-ci-image]][npm-ci-url]
 [![github-build-published][github-image]][github-url]
 [![CI][ci-image]][ci-url]
 [![License][license-image]][licence-url]
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-farhan7reza7-blue)](https://www.linkedin.com/in/farhan7reza7/)
 
 Installation
 ------------
@@ -23,11 +41,10 @@ npm install if-follow-package
 
 ```bash
 
-npm install @your-username/if-follow-package
+npm install @farhan7reza7/if-follow-package
 ```
 
-Usage
------
+## Usage
 
 **Initialize**
 
@@ -48,53 +65,219 @@ const followController = ifFollow(yourUsername, yourToken);
 ```
 
 ##### Steps to generate access-token:
-1. [generate here](https://github.com/settings/tokens/new)
+[See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/token%E2%80%90generation%E2%80%90steps.md)
 
-2. Fill Note field:
+**Or if already know creating token**
+[generate here](https://github.com/settings/tokens/new)
+
  
- <img width="442" alt="image" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/c38f3677-73b5-448f-9409-36a92a5a134b">
+Use Methods to manage follow
+-----
+
+- ##### Get a list of users who are not following you back
+```javascript
+const notFollowingBackList = followController.whoNotFollowingBack();
+
+```
 
 
-3. Check user access:
+- ##### Get a list of users who are following you back
+```javascript
+const followingBackList = followController.whoFollowingBack();
 
- <img width="404" alt="image" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/e5f63553-19c7-41c6-9824-b2557fc618ab">
+```
 
-4. click Generate token
 
-5. Copy token:
- 
- <img width="416" alt="Screenshot 2024-01-31 183401" src="https://github.com/farhan7reza7/if-follow-package/assets/108195448/17184b96-3076-4696-a073-1b3bf352c492">
- 
-**Use methods to manage follow**
+- ##### Check if a specific user is following you back
+```javascript
+const isFollowingBackMessage = followController.isFollowingBack('username');
+
+```
+
+
+- ##### Unfollow a user who is not following you back
+```javascript
+followController.unfollowNotFollowingBack('username');
+
+```
+
+
+- ##### Unfollow all users who are not following you back
+```javascript
+followController.unfollowAllNotFollowingBack();
+
+```
+
+
+- ##### Check if a user is following you
+```javascript
+const isFollowerMessage = followController.isFollower('username');
+
+```
+
+
+- ##### Check if you are following a user
+```javascript
+const isFollowingMessage = followController.isFollowing('username');
+
+```
+
+
+- ##### Get the total number of followers
+```javascript
+const totalFollowersMessage = followController.totalFollowers();
+
+```
+
+
+- ##### Get the total number of followings
+```javascript
+const totalFollowingsMessage = followController.totalFollowings();
+
+```
+
+Managed Outputs (example user outputs)
+------------------------------
+
+#### `isFollower(username)`
 
 ```javascript
 
-// Get a list of users who are not following you back
-const notFollowingBackList = followController.whoNotFollowingBack();
+// Test case: user is a follower
+const result1 = followController.isFollower('farhan7reza7');
 
-// Get a list of users who are following you back
-const followingBackList = followController.whoFollowingBack();
+result1.then((result) => {
+    console.log(result);  // Output: "Yes, farhan7reza7 follows you!"
+});
 
-// Check if a specific user is following you back
-const isFollowingBackMessage = followController.isFollowingBack('username');
+// Test case: user is not a follower
+const result2 = followController.isFollower('diff-ymd-package');
 
-// Unfollow a user who is not following you back followController.unfollowNotFollowingBack('username');
+result2.then((result) => {
+  console.log(result);  // Output: "No, diff-ymd-package does not follow you!"
+});
 
-`// Unfollow all users who are not following you back`
-followController.unfollowAllNotFollowingBack();
+```
 
-// Check if a user is following you
-const isFollowerMessage = await followController.isFollower('username');
+#### `isFollowing(username)`
 
-// Check if you are following a user
-const isFollowingMessage = await followController.isFollowing('username');
+```javascript
 
-// Get the total number of followers
-const totalFollowersMessage = await followController.totalFollowers();
+// Test case: user is followed
+const result3 = followController.isFollowing('farhan7reza7');
 
-// Get the total number of followings
-const totalFollowingsMessage = await followController.totalFollowings();
+result3.then((result) => {
+  console.log(result); // Output: "Yes, you follow farhan7reza7!"
+});
 
+// Test case: user is not followed
+const result4 = followController.isFollowing('anaseem80');
+
+result4.then((result) => {
+  console.log(result);  // Output: "No, you do not follow anaseem80!"
+});
+
+```
+
+#### `totalFollowers()`
+
+```javascript
+
+const result5 = followController.totalFollowers();
+
+result5.then((result) => {
+  console.log(result);  // Output: "Your total Followers: 1657"
+});
+
+```
+
+#### `totalFollowings()`
+
+```javascript
+
+const result6 = followController.totalFollowings();
+
+result6.then((result) => {
+  console.log(result);  // Output: "Your total Followings: 1067`
+});
+
+```
+
+#### `whoNotFollowingBack()`
+
+```javascript
+
+const result7 = followController.whoNotFollowingBack();
+
+result7.then((result) => {
+  console.log(result); // Output: ["diff-ymd-package", "Open-Sourced-Org", "username4", "usernameN"]
+}); 
+
+```
+
+#### `whoFollowingBack()`
+
+```javascript
+
+const result8 = followController.whoFollowingBack();
+
+result8.then((result) => {
+  console.log(result); // Output: ["farhan7reza7", "username2", "username3", "usernameN"]
+}); 
+
+```
+
+#### `isFollowingBack(username)`
+
+```javascript
+
+// Test case: user is following back
+const result9 = followController.isFollowingBack('farhan7reza7');
+
+result9.then((result) => {
+  console.log(result); // Output: "Yes, farhan7reza7 following back!"
+});  
+
+// Test case: user is not following back
+const result10 = followController.isFollowingBack('diff-ymd-package');
+
+result10.then((result) => {
+  console.log(result); // Output: "No, diff-ymd-package does not following back!"
+}); 
+
+```
+
+#### `unfollowNotFollowingBack(username)`
+
+```javascript
+
+// Test case: unfollow a user who is not following back
+const result11 = followController.unfollowNotFollowingBack('diff-ymd-package');
+                 //Console Output: "Unfollowed: diff-ymd-package"
+
+// not needed to console, because internally log message, just only call
+result11.then((result) => {
+  console.log(result); // Output: "undefined"
+}); 
+
+```
+
+#### `unfollowAllNotFollowingBack()`
+
+```javascript
+
+// Test case: unfollow all users who are not following back
+const result12 = followController.unfollowAllNotFollowingBack();
+                 /* Console Output: "Unfollowed: Open-Sourced-Org"
+                                    "Unfollowed: username2"
+                                    "Unfollowed: username3"
+                                    "Unfollowed: usernameN"*/
+     
+// not return anything, and internally log message, just only call
+result12.then((result) => {
+  console.log(result); // Output: "undefined"
+});       
+ 
 ```
 
 API Documentation
@@ -217,6 +400,10 @@ followController.unfollowNotFollowingBack('username');
 ```
 *   **`username`**: The username of the user you want to unfollow.
 
+*   **`Returns:`**  {Promise<void>} A promise that resolves once the user is unfollowed.
+
+*   **Special case:** It outputs message in console/terminal indicating which user unfollowed 
+
 ##### `unfollowAllNotFollowingBack()`
 
 Unfollow all users who are not following you back.
@@ -225,8 +412,11 @@ Unfollow all users who are not following you back.
 
 followController.unfollowAllNotFollowingBack();
 ```
+*   **`Returns:`** {Promise<void>} A promise that resolves once all users are unfollowed.
 
-For more information, See [`if-follow-package documentation`]()
+*   **Special case:** It outputs messages in console/terminal indicating which users unfollowed 
+
+For more information, [See `if-follow-package documentation`](https://farhan7reza7.github.io/if-follow-package/global.html)
 
 
 Contributing
@@ -258,15 +448,13 @@ History
 For more details about what has changed in each version of this project.  
 [See CHANGELOG.md](CHANGELOG.md).
 
-
-
 [npm-image]: https://img.shields.io/npm/v/if-follow-package
 [npm-url]: https://www.npmjs.com/package/if-follow-package
 [npm-ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-npm-registry.yml/badge.svg
 [npm-ci-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-npm-registry.yml
 [github-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-github-packages.yml/badge.svg
 [github-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/npm-publish-github-packages.yml
-[ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment/badge.svg
+[ci-image]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main
 [ci-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment
 [license-image]: https://img.shields.io/github/license/farhan7reza7/if-follow-package
 [licence-url]: https://opensource.org/licenses/MIT
