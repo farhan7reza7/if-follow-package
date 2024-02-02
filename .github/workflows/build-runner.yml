@@ -1,6 +1,6 @@
 # This workflow will run tests using node.
 
-name: test-runner
+name: build-runner
 
 on:
   push:
