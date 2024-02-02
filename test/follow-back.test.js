@@ -8,7 +8,13 @@ describe('Follow Back Module', () => {
   // Mocking axios calls
   const axios = require('axios');
   jest.mock('axios');
-
+  
+  // Mock the console.log function
+  global.console = {
+    log: jest.fn(),
+    error: jest.fn(),
+  };
+  
   beforeEach(() => {
     axios.get.mockReset();
     axios.delete.mockReset();
