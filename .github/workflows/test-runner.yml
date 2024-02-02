@@ -3,12 +3,12 @@
 name: test-runner
 
 on:
-  #push:
-    #branches:
-      #- main
-  #pull_request:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
   
 jobs:
@@ -27,11 +27,6 @@ jobs:
         run: npm ci
         
       - name: Run tests
-        #run: |
-          #echo "TOKEN: $token"
-          #echo "USER: $user"
-          #npm test
-        #run: npm run script-t
         run: npm test
         env:
           TOKEN: ${{ secrets.TOKEN }}
