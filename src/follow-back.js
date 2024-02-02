@@ -1,6 +1,5 @@
 // Importing required modules
 const axios = require('axios');
-//require('dotenv').config();
 
 /**
  * Module for managing followers and followings on GitHub.
@@ -26,6 +25,8 @@ const axios = require('axios');
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
 function followBack(yourUsername, yourToken) {
+  //const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms)); // Introduce a delay between API requests
+
   /**
    * Retrieves all followers of the specified user.
    * @private
@@ -59,6 +60,7 @@ function followBack(yourUsername, yourToken) {
         // Extract and store usernames of followers
         followers.push(...data.map(({ login }) => login));
         page++;
+        //await delay(1000); // Introduce a delay between API requests
       } catch (error) {
         // Handle Axios errors
         handleAxiosError(error);
@@ -102,6 +104,7 @@ function followBack(yourUsername, yourToken) {
         // Extract and store usernames of following
         following.push(...data.map(({ login }) => login));
         page++;
+        //await delay(1000); // Introduce a delay between API requests
       } catch (error) {
         // Handle Axios errors
         handleAxiosError(error);
@@ -117,17 +120,24 @@ function followBack(yourUsername, yourToken) {
    * @param {Error} error - The error object.
    */
   function handleAxiosError(error) {
-    if (error.response) {
-      // The request was made, but the server responded with an error
-      console.error(
-        `API Error: ${error.response.status} - ${error.response.data.message}`,
-      );
-    } else if (error.request) {
-      // The request was made, but no response was received
-      console.error('No response received from the server');
+    if (axios.isAxiosError(error)) {
+      if (error.response) {
+        // The request was made, but the server responded with an error
+        console.error(
+          `API Error: ${error.response.status} - ${error.response.data.message || 'No error message available'}`,
+        );
+      } else if (error.request) {
+        // The request was made, but no response was received
+        console.error('No response received from the server');
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.error(
+          `Error: ${error.message || 'No error message available'}`,
+        );
+      }
     } else {
-      // Something happened in setting up the request that triggered an Error
-      console.error(`Error: ${error.message}`);
+      //console.error(`Non-Axios Error: ${error.message || "No error message available"}`);
+      console.log('Non-Axios Error');
     }
   }
 
@@ -142,7 +152,7 @@ function followBack(yourUsername, yourToken) {
       const message = followers.includes(username)
         ? `Yes, ${username} follows you!`
         : `No, ${username} does not follow you!`;
-      console.log(message);
+      //console.log(message);
       return message;
     },
 
@@ -156,7 +166,7 @@ function followBack(yourUsername, yourToken) {
       const message = following.includes(username)
         ? `Yes, you follow ${username}!`
         : `No, you do not follow ${username}!`;
-      console.log(message);
+      //console.log(message);
       return message;
     },
 
@@ -216,7 +226,7 @@ function followBack(yourUsername, yourToken) {
       const message = followingBacks.includes(username)
         ? `Yes, ${username} following back!`
         : `No, ${username} does not following back!`;
-      console.log(message);
+      //console.log(message);
       return message;
     },
 
@@ -249,9 +259,7 @@ function followBack(yourUsername, yourToken) {
           console.error(`Failed to unfollow: ${username}`);
         }
       } else {
-        console.log(
-          `Sorry, ${username} is not a user who is not following you back`,
-        );
+        console.log(`Sorry, ${username} is not in not-following-back users`);
       }
     },
 
@@ -278,7 +286,9 @@ function followBack(yourUsername, yourToken) {
           // Handle errors during unfollowing
           console.error(`Failed to unfollow: ${user}`);
         }
+        //await delay(1000); // Introduce a delay between API requests
       }
+      console.log('Finished not following back users!');
     },
   };
 }
