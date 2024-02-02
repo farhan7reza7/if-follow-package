@@ -1,12 +1,20 @@
 const followBack = require('../src/follow-back'); // Import the module to be tested
 
+require('dotenv').config();
+
 const { TOKEN: token, USER: user } = process.env;
 
 describe('Follow Back Module', () => {
   // Mocking axios calls
   const axios = require('axios');
   jest.mock('axios');
-
+  
+  // Mock the console.log function
+  global.console = {
+    log: jest.fn(),
+    error: jest.fn(),
+  };
+  
   beforeEach(() => {
     axios.get.mockReset();
     axios.delete.mockReset();
@@ -104,7 +112,7 @@ describe('Follow Back Module', () => {
   describe('whoFollowingBack', () => {
     it('should return users who are following back', async () => {
       const result = await followBack(user, token).whoFollowingBack();
-      expect(result).toEqual(["farhan7reza7"]);
+      expect(result).toEqual(['farhan7reza7']);
     });
   });
 
@@ -134,7 +142,11 @@ describe('Follow Back Module', () => {
       await followBack(user, token).unfollowNotFollowingBack(
         'diff-ymd-package',
       );
-      expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
+      expect(axios.delete).not.toHaveBeenCalled(); // Axios delete should not be called
+      expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming no user unfollowed
+      //expect(console.log).toHaveBeenCalledWith('Unfollowed: diff-ymd-package');
+      expect(console.log).toHaveBeenCalledWith('Sorry, diff-ymd-package is not in not-following-back users');
+
     });
   });
 
@@ -144,7 +156,9 @@ describe('Follow Back Module', () => {
       axios.delete.mockResolvedValueOnce({ status: 204 }); // Mock the successful deletion
 
       await followBack(user, token).unfollowAllNotFollowingBack();
+      expect(axios.delete).not.toHaveBeenCalled(); // Axios delete should not be called
       expect(axios.delete).toHaveBeenCalledTimes(0); // Assuming there are one user to unfollow
+      expect(console.log).toHaveBeenCalledWith('Finished not following back users!');
     });
   });
 });

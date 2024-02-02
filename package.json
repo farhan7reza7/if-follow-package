@@ -7,8 +7,7 @@
     "test": "jest",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
-    "format": "prettier --write .",
-    "script-t": "node ./test/follow-back.test.js"
+    "format": "prettier --write ."
   },
   "keywords": ["follow", "not-follow", "follow-control", "github-plugin", "manage-follow", "follow-back", "following", "follows", "following-back", "who-follow", "who-not-follow-back", "who-follow-back", "exact-total","followers", "unfollow", "unfollow-who-not-follow-back", "not-follow-back", "who-follow-back", "who-not-follow-back"],
   "author": "Farhan Reza",
