@@ -49,7 +49,7 @@ npm install @farhan7reza7/if-follow-package
 **Initialize**
 
 ```javascript
-//const ifFollow = require('@farhan7reza7/if-follow-package'); or
+//const ifFollow = require('@farhan7reza7/if-follow-package'); //or
 
 const ifFollow = require('if-follow-package'); // can use any
 
