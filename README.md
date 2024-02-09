@@ -46,7 +46,7 @@ npm install @farhan7reza7/if-follow-package
 
 ## Usage
 
-**Initialize**
+### `Initialize:`
 
 ```javascript
 //const ifFollow = require('@farhan7reza7/if-follow-package'); //or
@@ -55,7 +55,7 @@ const ifFollow = require('if-follow-package'); // can use any
 
 ```
 
-**Create an instance**
+### `Create an instance:`
 
 ```javascript
 const yourUsername = 'username';  // replace with your username
@@ -67,12 +67,12 @@ const followController = ifFollow(yourUsername, yourToken);
 ##### Steps to generate access-token:
 [See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/token%E2%80%90generation%E2%80%90steps.md)
 
-**Or if already know creating token**
+##### Or if already know creating token
 [generate here](https://github.com/settings/tokens/new)
 
  
-Use Methods to manage follow
------
+### `Use Methods to manage follow:`
+<!-- ----- -->
 
 - ##### Get a list of users who are not following you back
 ```javascript
@@ -136,10 +136,10 @@ const totalFollowingsMessage = followController.totalFollowings();
 
 ```
 
-Managed Outputs (example user outputs)
-------------------------------
+### `Managed Outputs (example user outputs):`
+<!--  ------------------------------  -->
 
-#### `isFollower(username)`
+##### `isFollower(username)`
 
 ```javascript
 
@@ -159,7 +159,7 @@ result2.then((result) => {
 
 ```
 
-#### `isFollowing(username)`
+##### `isFollowing(username)`
 
 ```javascript
 
@@ -179,7 +179,7 @@ result4.then((result) => {
 
 ```
 
-#### `totalFollowers()`
+##### `totalFollowers()`
 
 ```javascript
 
@@ -191,7 +191,7 @@ result5.then((result) => {
 
 ```
 
-#### `totalFollowings()`
+##### `totalFollowings()`
 
 ```javascript
 
@@ -203,7 +203,7 @@ result6.then((result) => {
 
 ```
 
-#### `whoNotFollowingBack()`
+##### `whoNotFollowingBack()`
 
 ```javascript
 
@@ -215,7 +215,7 @@ result7.then((result) => {
 
 ```
 
-#### `whoFollowingBack()`
+##### `whoFollowingBack()`
 
 ```javascript
 
@@ -227,7 +227,7 @@ result8.then((result) => {
 
 ```
 
-#### `isFollowingBack(username)`
+##### `isFollowingBack(username)`
 
 ```javascript
 
@@ -247,7 +247,7 @@ result10.then((result) => {
 
 ```
 
-#### `unfollowNotFollowingBack(username)`
+##### `unfollowNotFollowingBack(username)`
 
 ```javascript
 
@@ -262,7 +262,7 @@ result11.then((result) => {
 
 ```
 
-#### `unfollowAllNotFollowingBack()`
+##### `unfollowAllNotFollowingBack()`
 
 ```javascript
 
