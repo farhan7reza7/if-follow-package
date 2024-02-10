@@ -301,9 +301,9 @@ const followController = ifFollow(yourUsername, yourToken);
 *   **`Returns:`** An object containing functions to interact with followers and followings on Github.
     
 
-#### Methods:
+### `Methods:`
 
-##### `isFollower(username)`
+- #### `isFollower(username)`
 
 Check if a user is following you.
 
@@ -312,12 +312,12 @@ Check if a user is following you.
 const isFollowerMessage = followController.isFollower('username');
 
 ```
-*   **`username`**: The username of the user you want to check.
+   **`username`**: The username of the user you want to check.
     
-*   **`Returns:`** A message indicating if the user is following you.
+   **`Returns:`** A message indicating if the user is following you.
     
 
-##### `isFollowing(username)`
+- #### `isFollowing(username)`
 
 Check if you are following a user.
 
@@ -327,12 +327,12 @@ const isFollowingMessage = followController.isFollowing('username');
 
 ```
 
-*   **`username`**: The username of the user you want to check.
+   **`username`**: The username of the user you want to check.
     
-*   **`Returns:`** A message indicating if you are following the user.
+   **`Returns:`** A message indicating if you are following the user.
     
 
-##### `totalFollowers()`
+- #### `totalFollowers()`
 
 Get the total number of followers.
 
@@ -341,9 +341,9 @@ Get the total number of followers.
 const totalFollowersMessage = followController.totalFollowers();
 ```
 
-*   **`Returns:`** A message with the total number of followers.
+   **`Returns:`** A message with the total number of followers.
 
-##### `totalFollowings()`
+- #### `totalFollowings()`
 
 Get the total number of followings.
 
@@ -352,9 +352,9 @@ Get the total number of followings.
 const totalFollowingsMessage = followController.totalFollowings();
 ```
 
-*   **`Returns:`** A message with the total number of followings.
+   **`Returns:`** A message with the total number of followings.
 
-##### `whoNotFollowingBack()`
+- #### `whoNotFollowingBack()`
 
 Get a list of users who are not following you back.
 
@@ -363,9 +363,9 @@ Get a list of users who are not following you back.
 const notFollowingBackList = followController.whoNotFollowingBack();
 ```
 
-*   **`Returns:`** An array of usernames who are not following you back.
+   **`Returns:`** An array of usernames who are not following you back.
 
-##### `whoFollowingBack()`
+- #### `whoFollowingBack()`
 
 Get a list of users who are following you back.
 
@@ -374,9 +374,9 @@ Get a list of users who are following you back.
 const followingBackList = followController.whoFollowingBack();
 ```
 
-*   **`Returns:`** An array of usernames who are following you back.
+   **`Returns:`** An array of usernames who are following you back.
 
-##### `isFollowingBack(username)`
+- #### `isFollowingBack(username)`
 
 Check if a specific user is following you back.
 
@@ -385,12 +385,12 @@ Check if a specific user is following you back.
 const isFollowingBackMessage = followController.isFollowingBack('username');
 ```
 
-*   **`username`**: The username of the user you want to check.
+   **`username`**: The username of the user you want to check.
     
-*   **`Returns:`** A message indicating if the user is following you back.
+   **`Returns:`** A message indicating if the user is following you back.
     
 
-##### `unfollowNotFollowingBack(username)`
+- #### `unfollowNotFollowingBack(username)`
 
 Unfollow a user who is not following you back.
 
@@ -398,13 +398,13 @@ Unfollow a user who is not following you back.
 
 followController.unfollowNotFollowingBack('username');
 ```
-*   **`username`**: The username of the user you want to unfollow.
+   **`username`**: The username of the user you want to unfollow.
 
-*   **`Returns:`**  {Promise<void>} A promise that resolves once the user is unfollowed.
+   **`Returns:`**  {Promise<void>} A promise that resolves once the user is unfollowed.
 
-*   **Special case:** It outputs message in console/terminal indicating which user unfollowed 
+   **Special case:** It outputs message in console/terminal indicating which user unfollowed 
 
-##### `unfollowAllNotFollowingBack()`
+- #### `unfollowAllNotFollowingBack()`
 
 Unfollow all users who are not following you back.
 
@@ -412,12 +412,12 @@ Unfollow all users who are not following you back.
 
 followController.unfollowAllNotFollowingBack();
 ```
-*   **`Returns:`** {Promise<void>} A promise that resolves once all users are unfollowed.
+   **`Returns:`** {Promise<void>} A promise that resolves once all users are unfollowed.
 
-*   **Special case:** It outputs messages in console/terminal indicating which users unfollowed 
+   **Special case:** It outputs messages in console/terminal indicating which users unfollowed 
 
-For more information, [See `if-follow-package documentation`](https://farhan7reza7.github.io/if-follow-package/global.html)
-
+### `For more information:`
+[See `if-follow-package Documentation`](https://farhan7reza7.github.io/if-follow-package/global.html)
 
 Contributing
 ------------
