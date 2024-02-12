@@ -55,10 +55,19 @@ fixed some issues and configured files for v1.1.1
 
 fixed some issues and configured files for v1.1.2
 
-### [Next Release] - Collecting issues and new features for release
+### [v1.1.3]
+
+#### Fixed
+
+- formatted readme documentation for better presentation
+- added wiki for if-follow-package better docummentation
+- updated if-follow-package gh-pages documention
+- fixed some other issues and configured files for v1.1.3
+
+### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.1.2...HEAD)
-- [v1.1.2](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.1.2)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.1.3...HEAD)
+- [v1.1.3](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.1.3)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
