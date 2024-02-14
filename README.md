@@ -424,7 +424,7 @@ Contributing
 
 If you find any issues or have suggestions for improvement, please open an issue or create a pull request on the GitHub repository.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+[See CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 Best Practices:
 ---------------
