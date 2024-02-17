@@ -106,11 +106,19 @@ fixed some issues and configured files for v1.1.2
 - README.md updated: Added consistent formating and recommended for best practices.
 - Enhanced code comments: Provided thorough inline documentation for better codes understanding.
 
+### [v2.1.0]
+
+#### Fixed
+
+fixed some version 2.0.0 error and configured files for v2.1.0
+
+#### Changed
+now version 2.0.0 working correctly, resolves v2.0.0 errors
 
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.0.0...HEAD)
-- [v2.0.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.0.0)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.1.0...HEAD)
+- [v2.1.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.1.0)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
