@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 const getAllFollowers = require("./private-followers");
-const getAllFollowing - require("./private-followings");
+const getAllFollowing = require("./private-followings");
 
 const IfFollow =  {
     /**
