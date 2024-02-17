@@ -1,29 +1,5 @@
-// Importing required modules
-
-const axios = require('axios');
-
 /**
-  * Function to Handles errors from Axios requests.
-  * @param {Error} error - The error object.
-  */
-const handleAxiosError = require("./error-handler");
-
-/**
-  * Function to Retrieves all followers of the specified user.
-  * @private
-  * @returns {Promise<Array<string>>} An array of usernames of followers.
-  */
-const getAllFollowers = require("./private-followers");
-
-/**
-  * Function to Retrieves all users that the specified user is following.
-  * @private
-  * @returns {Promise<Array<string>>} An array of usernames of users being followed.
-  */
-const getAllFollowing = require("./private-followings");
-
-/**
- * Class containing utilities for managing followers and followings on GitHub.
+ * Type for managing followers and followings on GitHub.
  *
  * @typedef {Object} IfFollow
  * @property {Function} isFollower - Checks if a user is following the authenticated user.
@@ -36,10 +12,9 @@ const getAllFollowing = require("./private-followings");
  * @property {Function} unfollowNotFollowingBack - Unfollows a user who is not following back.
  * @property {Function} unfollowAllNotFollowingBack - Unfollows all users who are not following back.
  */
-const IfFollow = require("./if-follow");
 
 /**
- * Creates an instance of the IfFollow Type.
+ * Function to Create an instance of the IfFollow Type.
  *
  * @function
  * @param {string} yourUsername - Your GitHub username.
