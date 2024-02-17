@@ -10,7 +10,7 @@ class IfFollow {
         *
         * @constructor
         * @param {string} yourName 
-        * @param {string} yourToken (
+        * @param {string} yourToken
         */
       constructor(yourName, yourToken) {
           this.yourName = yourName;
@@ -27,7 +27,6 @@ class IfFollow {
       const message = followers.includes(username)
         ? `Yes, ${username} follows you!`
         : `No, ${username} does not follow you!`;
-      //console.log(message);
       return message;
     },
 
@@ -41,7 +40,6 @@ class IfFollow {
       const message = following.includes(username)
         ? `Yes, you follow ${username}!`
         : `No, you do not follow ${username}!`;
-      //console.log(message);
       return message;
     },
 
@@ -101,7 +99,6 @@ class IfFollow {
       const message = followingBacks.includes(username)
         ? `Yes, ${username} following back!`
         : `No, ${username} does not following back!`;
-      //console.log(message);
       return message;
     },
 
