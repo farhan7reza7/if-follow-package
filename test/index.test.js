@@ -1,4 +1,4 @@
-const followBack = require('../src/follow-back'); // Import the module to be tested
+const followBack = require('../src/index'); // Import the module to be tested
 
 //require('dotenv').config();
 
