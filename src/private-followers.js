@@ -8,7 +8,7 @@ const handleAxiosError = require("./error-handler");
    * @private
    * @returns {Promise<Array<string>>} An array of usernames of followers.
    */
-  async function getAllFollowers() {
+  async function getAllFollowers(yourUsername, yourToken) {
     const followers = [];
     let page = 1;
 
