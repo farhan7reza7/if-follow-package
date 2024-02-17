@@ -1,3 +1,6 @@
+// Importing required modules
+const axios = require('axios');
+
 const handleAxiosError = require("./error-handler");
 
 /**
