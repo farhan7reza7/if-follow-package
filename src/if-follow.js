@@ -4,14 +4,26 @@ const axios = require('axios');
 const getAllFollowers = require("./private-followers");
 const getAllFollowing = require("./private-followings");
 
-const IfFollow =  {
+class IfFollow {
+       /**
+        * Creates an instance of IfFollow.
+        *
+        * @constructor
+        * @param {string} yourName 
+        * @param {string} yourToken (
+        */
+      constructor(yourName, yourToken) {
+          this.yourName = yourName;
+          this.yourToken = yourToken;
+      }
+    
     /**
      * Checks if a user is following the authenticated user.
      * @param {string} username - The username to check.
      * @returns {Promise<string>} A message indicating if the user follows or not.
      */
     async isFollower(username) {
-      const followers = await getAllFollowers(username, yourToken);
+      const followers = await getAllFollowers(this.yourName, this.yourToken);
       const message = followers.includes(username)
         ? `Yes, ${username} follows you!`
         : `No, ${username} does not follow you!`;
@@ -25,7 +37,7 @@ const IfFollow =  {
      * @returns {Promise<string>} A message indicating if the user is followed or not.
      */
     async isFollowing(username) {
-      const following = await getAllFollowing(username, yourToken);
+      const following = await getAllFollowing(this.yourName, this.yourToken);
       const message = following.includes(username)
         ? `Yes, you follow ${username}!`
         : `No, you do not follow ${username}!`;
@@ -38,7 +50,7 @@ const IfFollow =  {
      * @returns {Promise<number>} The total number of followers.
      */
     async totalFollowers() {
-      const followers = await getAllFollowers(username, yourToken);
+      const followers = await getAllFollowers(this.yourName, this.yourToken);
       console.log(`Your total Followers: ${followers.length}`);
       return followers.length;
     },
@@ -48,7 +60,7 @@ const IfFollow =  {
      * @returns {Promise<number>} The total number of followings.
      */
     async totalFollowings() {
-      const following = await getAllFollowing(username, yourToken);
+      const following = await getAllFollowing(this.yourName, this.yourToken);
       console.log(`Your total Followings: ${following.length}`);
       return following.length;
     },
@@ -58,8 +70,8 @@ const IfFollow =  {
      * @returns {Promise<Array<string>>} An array of usernames not followed back.
      */
     async whoNotFollowingBack() {
-      const followers = await getAllFollowers(username, yourToken);
-      const following = await getAllFollowing(username, yourToken);
+      const followers = await getAllFollowers(this.yourName, this.yourToken);
+      const following = await getAllFollowing(this.yourName, this.yourToken);
       const notFollowingBack = following.filter(
         (user) => !followers.includes(user),
       );
@@ -71,8 +83,8 @@ const IfFollow =  {
      * @returns {Promise<Array<string>>} An array of usernames being followed back.
      */
     async whoFollowingBack() {
-      const followers = await getAllFollowers(username, yourToken);
-      const following = await getAllFollowing(username, yourToken);
+      const followers = await getAllFollowers(this.yourName, this.yourToken);
+      const following = await getAllFollowing(this.yourName, this.yourToken);
       const followingBacks = following.filter((user) =>
         followers.includes(user),
       );
