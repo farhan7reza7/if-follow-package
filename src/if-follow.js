@@ -35,8 +35,8 @@ class IfFollow {
         * Creates an instance of IfFollow.
         *
         * @constructor
-        * @param {string} yourName 
-        * @param {string} yourToken
+        * @param {string} yourName - Your GitHub username
+        * @param {string} yourToken - Your GitHub personal access token
         */
       constructor(yourName, yourToken) {
           this.yourName = yourName;
