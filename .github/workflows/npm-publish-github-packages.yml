@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 16
       - run: npm ci
-      - run: npm test || true
+      - run: npm test
         env:
           TOKEN: ${{ secrets.TOKEN }}
           USER: ${{ secrets.USER }}
