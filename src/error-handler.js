@@ -1,3 +1,7 @@
+// Importing required modules
+const axios = require('axios');
+
+
 /**
    * Handles errors from Axios requests.
    * @param {Error} error - The error object.
