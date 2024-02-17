@@ -20,7 +20,7 @@ const getAllFollowers = require("./private-followers");
   * @private
   * @returns {Promise<Array<string>>} An array of usernames of users being followed.
   */
-const getAllFollowing - require("./private-followings");
+const getAllFollowing = require("./private-followings");
 
 /**
  * Object containing utilities for managing followers and followings on GitHub.
