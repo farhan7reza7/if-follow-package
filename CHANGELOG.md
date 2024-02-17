@@ -64,7 +64,7 @@ fixed some issues and configured files for v1.1.2
 - updated if-follow-package gh-pages documention
 - fixed some other issues and configured files for v1.1.3
 
-### [v1.2.0] - [2024-02-17]
+### [v1.2.0]
 
 #### Added
 
@@ -83,10 +83,34 @@ fixed some issues and configured files for v1.1.2
 - Fixed some issues related to the new changes.
 - Configured files for publishing diff-ymd-package v1.2.0 on npm registry.
 
+### [v2.0.0] - [2024-02-17]
+
+#### Added
+
+- **Simplification:** Modularize the if-follow-package
+- Updated the README.md documentation for following the best practices.
+
+#### Changed
+
+- Improved algorithm efficiency: Enhanced performance for existing methods to provide faster calculations.
+- modulized codebase
+- Modified internal structure: Refactored internal code for better readability and maintainability.
+
+#### Fixed
+
+- Fixed some issues related to the new changes.
+- Configured files for publishing if-follow-package v2.0.0 on npm registry.
+
+#### Documentation
+
+- README.md updated: Added consistent formating and recommended for best practices.
+- Enhanced code comments: Provided thorough inline documentation for better codes understanding.
+
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v1.2.0...HEAD)
-- [v1.2.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v1.2.0)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.0.0...HEAD)
+- [v2.0.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.0.0)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
