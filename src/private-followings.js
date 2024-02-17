@@ -1,6 +1,11 @@
 // Importing required modules
+
 const axios = require('axios');
 
+/**
+   * Function to Handles errors from Axios requests.
+   * @param {Error} error - The error object.
+   */
 const handleAxiosError = require("./error-handler");
 
 /**
