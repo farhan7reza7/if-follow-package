@@ -62,7 +62,8 @@ const IfFollow = require("./if-follow");
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
 function followBack(username, yourToken) {
-  return IfFollow;
+  const ifFollow = new IfFollow(username, yourToken);
+  return ifFollow;
 }
 
 /**
