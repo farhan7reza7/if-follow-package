@@ -28,7 +28,7 @@ class IfFollow {
         ? `Yes, ${username} follows you!`
         : `No, ${username} does not follow you!`;
       return message;
-    },
+    }
 
     /**
      * Checks if the authenticated user is following a given user.
@@ -41,7 +41,7 @@ class IfFollow {
         ? `Yes, you follow ${username}!`
         : `No, you do not follow ${username}!`;
       return message;
-    },
+    }
 
     /**
      * Retrieves the total number of followers for the authenticated user.
@@ -51,7 +51,7 @@ class IfFollow {
       const followers = await getAllFollowers(this.yourName, this.yourToken);
       console.log(`Your total Followers: ${followers.length}`);
       return followers.length;
-    },
+    }
 
     /**
      * Retrieves the total number of users that the authenticated user is following.
@@ -61,7 +61,7 @@ class IfFollow {
       const following = await getAllFollowing(this.yourName, this.yourToken);
       console.log(`Your total Followings: ${following.length}`);
       return following.length;
-    },
+    }
 
     /**
      * Retrieves users that the authenticated user is not following back.
@@ -74,7 +74,7 @@ class IfFollow {
         (user) => !followers.includes(user),
       );
       return notFollowingBack;
-    },
+    }
 
     /**
      * Retrieves users that the authenticated user is following back.
@@ -87,7 +87,7 @@ class IfFollow {
         followers.includes(user),
       );
       return followingBacks;
-    },
+    }
 
     /**
      * Checks if a user is following the authenticated user back.
@@ -100,7 +100,7 @@ class IfFollow {
         ? `Yes, ${username} following back!`
         : `No, ${username} does not following back!`;
       return message;
-    },
+    }
 
     /**
      * Unfollows a user who is not following back.
@@ -133,7 +133,7 @@ class IfFollow {
       } else {
         console.log(`Sorry, ${username} is not in not-following-back users`);
       }
-    },
+    }
 
     /**
      * Unfollows all users who are not following back.
@@ -161,7 +161,7 @@ class IfFollow {
         //await delay(1000); // Introduce a delay between API requests
       }
       console.log('Finished not following back users!');
-    },
+    }
   };
 
 module.exports = IfFollow;
