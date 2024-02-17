@@ -1,27 +1,5 @@
 // Importing required modules
 
-const axios = require('axios');
-
-/**
-  * Function to Handles errors from Axios requests.
-  * @param {Error} error - The error object.
-  */
-const handleAxiosError = require("./error-handler");
-
-/**
-  * Function to Retrieves all followers of the specified user.
-  * @private
-  * @returns {Promise<Array<string>>} An array of usernames of followers.
-  */
-const getAllFollowers = require("./private-followers");
-
-/**
-  * Function to Retrieves all users that the specified user is following.
-  * @private
-  * @returns {Promise<Array<string>>} An array of usernames of users being followed.
-  */
-const getAllFollowing = require("./private-followings");
-
 /**
  * Class containing utilities for managing followers and followings on GitHub.
  *
