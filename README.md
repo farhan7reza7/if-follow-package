@@ -27,6 +27,21 @@ if-follow-package
 [![License][license-image]][licence-url]
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-farhanReza-blue)](https://www.linkedin.com/in/farhan7reza7/)
 
+## Table of Contents
+
+*   [Installation](#installation)
+    *   [Install from npm registry](#install-from-npm-registry)
+    *   [Install from Github Packages registry](#install-from-github-packages-registry)
+*   [Usage](#usage)
+*   [API References](#api-references)
+*   [API Documentation](#api-documentation)
+*   [Contributing](#contributing)
+*   [Best Practices](#best-practices)
+*   [License](#license)
+*   [History](#history)
+
+
+
 Installation
 ------------
 
@@ -279,6 +294,23 @@ result12.then((result) => {
 });       
  
 ```
+
+
+## API References
+**if-follow-package**
+* [Classes](#api-documentation)
+  *   [ifFollow](#iffollow)
+      *   [Create an instance of ifFollow:](#create-an-instance-of-iffollow)
+  *   [Methods:](#methods)
+      *   [isFollower(username)](#isfollowerusername-1)
+      *   [isFollowing(username)](#isfollowingusername-1)
+      *   [totalFollowers()](#totalfollowers-1)
+      *   [totalFollowings()](#totalfollowings-1)
+      *   [whoNotFollowingBack()](#whonotfollowingback-1)
+      *   [whoFollowingBack()](#whofollowingback-1)
+      *   [isFollowingBack(username)](#isfollowingbackusername-1)
+      *   [unfollowNotFollowingBack(username)](#unfollownotfollowingbackusername-1)
+      *   [unfollowAllNotFollowingBack()](#unfollowallnotfollowingback-1)
 
 API Documentation
 -----------------
