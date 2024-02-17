@@ -61,7 +61,7 @@ const IfFollow = require("./if-follow");
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-function followBack(yourUsername, yourToken) {
+function followBack(username, yourToken) {
   return IfFollow;
 }
 
