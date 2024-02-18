@@ -115,10 +115,20 @@ fixed some version 2.0.0 error and configured files for v2.1.0
 #### Changed
 now version 2.0.0 working correctly, resolves v2.0.0 errors
 
+
+### [v2.1.1]
+
+#### Changed
+now version 2.1.1 working correctly, resolves v2.1.0 unfollow feature errors
+
+#### Fixed
+
+fixed some version 2.1.0 error and configured files for v2.1.1
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.1.0...HEAD)
-- [v2.1.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.1.0)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.1.1...HEAD)
+- [v2.1.1](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.1.1)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
