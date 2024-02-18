@@ -30,8 +30,8 @@ if-follow-package
 ## Table of Contents
 
 *   [Installation](#installation)
-    *   [Install from npm registry](#install-from-npm-registry)
-    *   [Install from Github Packages registry](#install-from-github-packages-registry)
+    *   [Install from npm registry](#install-from-npm-registrypreference)
+    *   [Install from Github Packages registry](#install-from-github-packages-registryrequire-authentication)
 *   [Usage](#usage)
 *   [API References](#api-references)
 *   [API Documentation](#api-documentation)
