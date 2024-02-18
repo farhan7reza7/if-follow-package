@@ -18,10 +18,6 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           keep_fnames: true, // Preserve function names
-          // Enable/disable comments removal
-          extractComments: true,
-          // Enable/disable parallel processing
-          parallel: true,
         },
       }),
     ],
@@ -37,7 +33,7 @@ module.exports = {
             presets: ['@babel/preset-env'], // Use @babel/preset-env for compatibility
             plugins: [
               // Exclude arrow function transformation
-              ['@babel/plugin-transform-arrow-functions', { 'spec': true }],
+              ['@babel/plugin-transform-arrow-functions', { spec: true }],
             ],
           },
         },
