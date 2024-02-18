@@ -26,7 +26,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/, // Apply Babel only to JavaScript files
-        exclude: /node_modules/, // Exclude node_modules directory
+        //exclude: /node_modules/, // Exclude node_modules directory
         use: {
           loader: 'babel-loader', // Use babel-loader for transpilation
           options: {
