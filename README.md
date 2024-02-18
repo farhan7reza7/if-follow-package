@@ -30,8 +30,8 @@ if-follow-package
 ## Table of Contents
 
 *   [Installation](#installation)
-    *   [Install from npm registry](#install-from-npm-registry)
-    *   [Install from Github Packages registry](#install-from-github-packages-registry)
+    *   [Install from npm registry](#install-from-npm-registrypreference)
+    *   [Install from Github Packages registry](#install-from-github-packages-registryrequire-authentication)
 *   [Usage](#usage)
 *   [API References](#api-references)
 *   [API Documentation](#api-documentation)
@@ -45,19 +45,21 @@ if-follow-package
 Installation
 ------------
 
-### Install from `npm registry`
+### Install from `npm registry`(Preference)
 
 ```bash
 
 npm install if-follow-package
 ```
 
-### Install from `Github Packages registry`
+### Install from `Github Packages registry`(require authentication)
 
 ```bash
 
 npm install @farhan7reza7/if-follow-package
 ```
+##### Steps to install from `Github Packages registry`:
+[See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/Github-Packages-registry-Steps)
 
 ## Usage
 
@@ -66,7 +68,7 @@ npm install @farhan7reza7/if-follow-package
 ```javascript
 //const ifFollow = require('@farhan7reza7/if-follow-package'); //or
 
-const ifFollow = require('if-follow-package'); // can use any
+const ifFollow = require('if-follow-package'); // can use any if authenticated
 
 ```
 
