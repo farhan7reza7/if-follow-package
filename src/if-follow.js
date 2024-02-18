@@ -147,7 +147,7 @@ class IfFollow {
             `https://api.github.com/user/following/${username}`,
             {
               headers: {
-                Authorization: `token ${yourToken}`, // Include the personal access token for authentication
+                Authorization: `token ${this.yourToken}`, // Include the personal access token for authentication
               },
             },
           );
@@ -176,7 +176,7 @@ class IfFollow {
         try {
           await axios.delete(`https://api.github.com/user/following/${user}`, {
             headers: {
-              Authorization: `token ${yourToken}`, // Include the personal access token for authentication
+              Authorization: `token ${this.yourToken}`, // Include the personal access token for authentication
             },
           });
           console.log(`Unfollowed: ${user}`);
