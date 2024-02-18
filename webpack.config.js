@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production', // or 'development'
@@ -11,6 +12,16 @@ module.exports = {
     // Expose the default export as a global variable
     globalObject: 'this',
   },
+  optimization: {
+    minimize: true, // or false if you want to disable minification
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          keep_fnames: true, // Preserve function names
+        },
+      }),
+    ],
+  },
   module: {
     rules: [
       {
@@ -20,6 +31,10 @@ module.exports = {
           loader: 'babel-loader', // Use babel-loader for transpilation
           options: {
             presets: ['@babel/preset-env'], // Use @babel/preset-env for compatibility
+            plugins: [
+              // Exclude arrow function transformation
+              ['@babel/plugin-transform-arrow-functions', { 'spec': true }],
+            ],
           },
         },
       },
