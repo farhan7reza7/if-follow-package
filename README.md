@@ -299,8 +299,8 @@ result12.then((result) => {
 ## API References
 **if-follow-package**
 * [Classes](#api-documentation)
-  *   [ifFollow](#iffollow)
-      *   [Create an instance of ifFollow:](#create-an-instance-of-iffollow)
+  *   [IfFollow](#iffollow)
+      *   [Create an instance of IfFollow:](#create-an-instance-of-iffollow)
   *   [Methods:](#methods)
       *   [isFollower(username)](#isfollowerusername-1)
       *   [isFollowing(username)](#isfollowingusername-1)
@@ -315,11 +315,20 @@ result12.then((result) => {
 API Documentation
 -----------------
 
-### `ifFollow`
+### `IfFollow`
 
-Represents a module for managing followers and followings on GitHub.
+Represents a class for managing followers and followings on GitHub.
 
-#### Create an instance of `ifFollow`:
+#### Initialize:
+
+```javascript
+
+const ifFollow = require('if-follow-package');
+```
+
+##### ifFollow is a function which creates an instance of IfFollow
+
+#### Create an instance of `IfFollow`:
 
 ```javascript
 
