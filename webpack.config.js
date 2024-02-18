@@ -18,6 +18,10 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           keep_fnames: true, // Preserve function names
+          // Enable/disable comments removal
+          extractComments: true,
+          // Enable/disable parallel processing
+          parallel: true,
         },
       }),
     ],
