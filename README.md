@@ -465,7 +465,7 @@ Contributing
 
 If you find any issues or have suggestions for improvement, please open an issue or create a pull request on the GitHub repository.
 
-[See CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+[See CONTRIBUTING guidelines](CONTRIBUTING.md) for more information.
 
 Best Practices:
 ---------------
@@ -475,6 +475,8 @@ Best Practices:
 *   Meaningful variable and function names for clarity.
 *   Clear and concise comments to enhance understanding.
 *   Proper indentation and formatting for visual organization.
+
+[See mdn guidelines](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript) for more information.
 
 License
 -------
