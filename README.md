@@ -74,6 +74,8 @@ npm install @farhan7reza7/if-follow-package
     <script src="https://cdn.jsdelivr.net/npm/if-follow-package@2.1.3/lib/index.min.js"></script>
 ```
 
+[Get any supported version script tag](https://github.com/farhan7reza7/if-follow-package/wiki/Supported-versions-script-tags)
+
 ## Usage
 
 ### `Initialize:`
