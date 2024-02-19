@@ -33,7 +33,6 @@ if-follow-package
     *   [Install from npm registry](#install-from-npm-registrypreference)
     *   [Install from Github Packages registry](#install-from-github-packages-registryrequire-authentication)
     *   [Include in html page from CDN](#include-in-html-page-from-cdn)
-
 *   [Usage](#usage)
 *   [API References](#api-references)
 *   [API Documentation](#api-documentation)
@@ -41,8 +40,6 @@ if-follow-package
 *   [Best Practices](#best-practices)
 *   [License](#license)
 *   [History](#history)
-
-
 
 Installation
 ------------
@@ -105,6 +102,7 @@ const yourToken = 'access-token' // replace with your access token
 const followController = ifFollow(yourUsername, yourToken);
 ```
 **Note:** For CDN based, only **ifFollow** function name creates an instance
+[See an example of using CDN based](https://github.com/farhan7reza7/if-follow-package/wiki/CDN-based-example)
 
 ##### Steps to generate access-token:
 [See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/token%E2%80%90generation%E2%80%90steps.md)
