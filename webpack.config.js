@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../if-follow-package', 'lib'), // Output directory
     filename: 'index.js', // Output filename
-    library: 'DatesYMD', // Name of your library
+    library: 'ifFollow', // Name of your library
     libraryTarget: 'umd', // Universal Module Definition
     // Expose the default export as a global variable
     globalObject: 'this',
