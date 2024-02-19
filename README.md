@@ -32,6 +32,7 @@ if-follow-package
 *   [Installation](#installation)
     *   [Install from npm registry](#install-from-npm-registrypreference)
     *   [Install from Github Packages registry](#install-from-github-packages-registryrequire-authentication)
+    *   [Include in html page from CDN](#include-in-html-page-from-cdn)
 *   [Usage](#usage)
 *   [API References](#api-references)
 *   [API Documentation](#api-documentation)
@@ -39,8 +40,6 @@ if-follow-package
 *   [Best Practices](#best-practices)
 *   [License](#license)
 *   [History](#history)
-
-
 
 Installation
 ------------
@@ -61,6 +60,19 @@ npm install @farhan7reza7/if-follow-package
 ##### Steps to install from `Github Packages registry`:
 [See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/Github-Packages-registry-Steps)
 
+### Include in html page from `CDN`
+
+**`OR` for version `2.1.3` and `above`**
+
+**Can include in page `using script tag` from CDN**
+
+```html
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/if-follow-package@2.1.3/lib/index.min.js"></script>
+```
+
+[Get any supported version script tag](https://github.com/farhan7reza7/if-follow-package/wiki/Supported-versions-script-tags)
+
 ## Usage
 
 ### `Initialize:`
@@ -72,6 +84,15 @@ const ifFollow = require('if-follow-package'); // can use any if authenticated
 
 ```
 
+**`OR` for version `2.1.3` and `above`**
+
+**Can include in html page `using script tag` from `CDN`**
+
+```html
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/if-follow-package@2.1.3/lib/index.min.js"></script>
+```
+
 ### `Create an instance:`
 
 ```javascript
@@ -80,6 +101,9 @@ const yourToken = 'access-token' // replace with your access token
 
 const followController = ifFollow(yourUsername, yourToken);
 ```
+**Note:** For CDN based, only **ifFollow** function name creates an instance
+
+[See an example of using CDN based](https://github.com/farhan7reza7/if-follow-package/wiki/CDN-based-example)
 
 ##### Steps to generate access-token:
 [See steps here](https://github.com/farhan7reza7/if-follow-package/wiki/token%E2%80%90generation%E2%80%90steps.md)
