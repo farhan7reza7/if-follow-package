@@ -64,7 +64,7 @@ const { USER: username, TOKEN: token } = process.env;
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-function followBack(yourUsername = username, yourToken = token) {
+function ifFollow(yourUsername = username, yourToken = token) {
   /**
    * Retrieves all followers of the specified user.
    * @private
@@ -323,13 +323,13 @@ function followBack(yourUsername = username, yourToken = token) {
 }
 
 /**
- * Exports the followBack function.
+ * Exports the ifFollow function.
  * @module
  * @default
- * @function followBack
+ * @function ifFollow
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-module.exports = followBack;
+module.exports = ifFollow;
 </code></pre>
         </article>
     </section>
@@ -340,7 +340,7 @@ module.exports = followBack;
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#followBack">followBack</a></li><li><a href="global.html#isFollower">isFollower</a></li><li><a href="global.html#isFollowing">isFollowing</a></li><li><a href="global.html#isFollowingBack">isFollowingBack</a></li><li><a href="global.html#totalFollowers">totalFollowers</a></li><li><a href="global.html#totalFollowings">totalFollowings</a></li><li><a href="global.html#unfollowAllNotFollowingBack">unfollowAllNotFollowingBack</a></li><li><a href="global.html#unfollowNotFollowingBack">unfollowNotFollowingBack</a></li><li><a href="global.html#whoFollowingBack">whoFollowingBack</a></li><li><a href="global.html#whoNotFollowingBack">whoNotFollowingBack</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ifFollow">ifFollow</a></li><li><a href="global.html#isFollower">isFollower</a></li><li><a href="global.html#isFollowing">isFollowing</a></li><li><a href="global.html#isFollowingBack">isFollowingBack</a></li><li><a href="global.html#totalFollowers">totalFollowers</a></li><li><a href="global.html#totalFollowings">totalFollowings</a></li><li><a href="global.html#unfollowAllNotFollowingBack">unfollowAllNotFollowingBack</a></li><li><a href="global.html#unfollowNotFollowingBack">unfollowNotFollowingBack</a></li><li><a href="global.html#whoFollowingBack">whoFollowingBack</a></li><li><a href="global.html#whoNotFollowingBack">whoNotFollowingBack</a></li></ul>
 </nav>
 
 <br class="clear">
