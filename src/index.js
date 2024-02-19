@@ -21,14 +21,14 @@
  * @param {string} yourToken - Your GitHub personal access token.
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-const followBack = require("./follow-back");
+const ifFollow = require("./follow-back");
 
 /**
- * Exports the followBack function.
+ * Exports the ifFollow function
  * @module
  * @default
- * @function followBack
+ * @function ifFollow
  * @returns {IfFollow} An object containing functions to interact with followers and followings.
  */
-module.exports = followBack;
+module.exports = ifFollow;
  
