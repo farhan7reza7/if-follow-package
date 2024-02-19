@@ -81,7 +81,7 @@ fixed some issues and configured files for v1.1.2
 #### Fixed
 
 - Fixed some issues related to the new changes.
-- Configured files for publishing diff-ymd-package v1.2.0 on npm registry.
+- Configured files for publishing if-follow-package v1.2.0 on npm registry.
 
 ### [v2.0.0] - [2024-02-17]
 
@@ -149,10 +149,32 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - fixed some other issues and configured files for v2.1.4
 
 
+### [v2.2.0]
+
+#### Added
+
+- **Simplification:** Added CDN approach for if-follow-package
+- Added the doc for CDN approach readme file
+- Added doc for CDN approach in jsdoc
+
+#### Changed
+
+- Improved algorithm efficiency: Enhanced performance for existing methods to provide faster calculations.
+- Modified internal structure: Refactored internal code for better readability and maintainability.
+- Updated source codes for adding ifFollow
+- Updated Readme and jsdoc doc for CDN approach
+
+
+#### Fixed
+
+- Fixed some issues related to the new changes.
+- Configured files for publishing if-follow-package v2.2.0 on npm registry.
+
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.1.4...HEAD)
-- [v2.1.4](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.1.4)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.2.0...HEAD)
+- [v2.2.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.2.0)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
