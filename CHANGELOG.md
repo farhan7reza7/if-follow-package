@@ -145,7 +145,7 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 
 #### Fixed
 
-- Updated codes to serve source from lib for both cdn and registry
+- Updated codes to serve cdn source from lib while npm for src
 - fixed some other issues and configured files for v2.1.4
 
 
