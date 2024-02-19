@@ -102,6 +102,7 @@ const yourToken = 'access-token' // replace with your access token
 const followController = ifFollow(yourUsername, yourToken);
 ```
 **Note:** For CDN based, only **ifFollow** function name creates an instance
+
 [See an example of using CDN based](https://github.com/farhan7reza7/if-follow-package/wiki/CDN-based-example)
 
 ##### Steps to generate access-token:
