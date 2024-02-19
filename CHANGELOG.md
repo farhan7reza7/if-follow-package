@@ -141,10 +141,18 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - corrected v2.1.2 error
 - fixed some other issues and configured files for v2.1.3
 
+### [v2.1.4]
+
+#### Fixed
+
+- Updated codes to serve source from lib for both cdn and registry
+- fixed some other issues and configured files for v2.1.4
+
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.1.3...HEAD)
-- [v2.1.3](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.1.3)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.1.4...HEAD)
+- [v2.1.4](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.1.4)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
