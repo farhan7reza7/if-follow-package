@@ -177,7 +177,7 @@ const totalFollowingsMessage = followController.totalFollowings();
 
 ```
 
-**Get `Built in  codes` `for using` if-follow-package `any Method`**
+**Get `Built in  codes` `for using` if-follow-package `any Method` on created instance(followController)**
 
 [Get Built in codes here](https://github.com/farhan7reza7/if-follow-package/wiki/Built-in--codes)
 
