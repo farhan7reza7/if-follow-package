@@ -170,11 +170,19 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - Fixed some issues related to the new changes.
 - Configured files for publishing if-follow-package v2.2.0 on npm registry.
 
+### [v2.2.1]
+
+#### Fixed
+- Updated reademe doc for documenting cdn and npm approach following best practices
+- fixed some other issues and configured files for v2.2.1
+
+#### Changed
+- Updated links to abs url for cross compatibility
 
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.2.0...HEAD)
-- [v2.2.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.2.0)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.2.1...HEAD)
+- [v2.2.1](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.2.1)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
