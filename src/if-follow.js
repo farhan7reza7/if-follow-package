@@ -99,7 +99,11 @@ class IfFollow {
       const notFollowingBack = following.filter(
         (user) => !followers.includes(user),
       );
+     if (notFollowingBack) {
       return notFollowingBack;
+     } else {
+      return [];
+     }
     }
 
     /**
@@ -112,7 +116,11 @@ class IfFollow {
       const followingBacks = following.filter((user) =>
         followers.includes(user),
       );
+     if (followingBacks) {
       return followingBacks;
+     } else {
+      return [];
+     }
     }
 
     /**
