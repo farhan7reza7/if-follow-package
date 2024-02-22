@@ -25,7 +25,7 @@ if-follow-package
 [![github-build-published][github-image]][github-url]
 [![CI][ci-image]][ci-url]
 [![License][license-image]][licence-url]
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-farhanReza-blue)](https://www.linkedin.com/in/farhan7reza7/)
+[![LinkedIn][linked-image]][linked-url]
 
 ## Table of Contents
 
@@ -496,7 +496,7 @@ Contributing
 
 If you find any issues or have suggestions for improvement, please open an issue or create a pull request on the GitHub repository.
 
-[See CONTRIBUTING guidelines](CONTRIBUTING.md) for more information.
+[See CONTRIBUTING guidelines](https://github.com/farhan7reza7/if-follow-package/blob/main/CONTRIBUTING.md) for more information.
 
 Best Practices:
 ---------------
@@ -521,7 +521,7 @@ History
 
 For more details about what has changed in each version of this project.  
 
-[See CHANGELOG](CHANGELOG.md)
+[See CHANGELOG](https://github.com/farhan7reza7/if-follow-package/blob/main/CHANGELOG.md)
 
 [npm-image]: https://img.shields.io/npm/v/if-follow-package
 [npm-url]: https://www.npmjs.com/package/if-follow-package
@@ -533,3 +533,5 @@ For more details about what has changed in each version of this project.
 [ci-url]: https://github.com/farhan7reza7/if-follow-package/actions/workflows/pages/pages-build-deployment
 [license-image]: https://img.shields.io/github/license/farhan7reza7/if-follow-package
 [licence-url]: https://opensource.org/licenses/MIT
+[linked-image]: https://img.shields.io/badge/LinkedIn-FarhanReza-blue
+[linked-url]: https://www.linkedin.com/in/farhan7reza7/
