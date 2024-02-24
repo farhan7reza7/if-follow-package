@@ -193,10 +193,30 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - add codeql
 
 
+### [v3.0.0] - [2024-02-24]
+
+#### Added
+
+- **Simplification:** Integrated security vurneability support
+- Updated the README.md documentation for following the best practices.
+
+#### Changed
+- Updated the README.md documentation for following the best practices.
+- Updated issue templates with correct descriptions and links
+
+#### Fixed
+
+- Fixed some issues related to the new changes.
+- Configured files for publishing if-follow-package v3.0.0.
+
+#### Documentation
+
+- README.md updated: Added consistent formating and recommended for best practices.
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v2.2.2...HEAD)
-- [v2.2.2](https://github.com/farhan7reza7/if-follow-package/releases/tag/v2.2.2)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.0...HEAD)
+- [v3.0.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.0)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
