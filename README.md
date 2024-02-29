@@ -67,7 +67,7 @@ npm install @farhan7reza7/if-follow-package
 **Can include in page `using script tag` from CDN**
 
 ```html
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.28.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/if-follow-package@3.0.0/lib/index.min.js"></script>
 ```
 
@@ -89,7 +89,7 @@ const ifFollow = require('if-follow-package'); // can use any if authenticated
 **Can include in html page `using script tag` from `CDN`**
 
 ```html
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.28.0/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/if-follow-package@3.0.0/lib/index.min.js"></script>
 ```
 
