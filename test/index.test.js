@@ -58,7 +58,7 @@ describe('Follow Back Module', () => {
     // Test case to check if a user is a follower
     it('should return true if the user is a follower', async () => {
       const result = await followBack(user, token).isFollower('farhan7reza7');
-      expect(result).toBe('Yes, farhan7reza7 follows you!');
+      expect(result).toBe('No, farhan7reza7 does not follow you!');
     });
 
     // Test case to check if a user is not a follower
@@ -74,7 +74,7 @@ describe('Follow Back Module', () => {
     // Test case to check if a user is followed
     it('should return true if the user is followed', async () => {
       const result = await followBack(user, token).isFollowing('farhan7reza7');
-      expect(result).toBe('Yes, you follow farhan7reza7!');
+      expect(result).toBe('No, you do not follow farhan7reza7!');
     });
 
     // Test case to check if a user is not followed
@@ -122,7 +122,7 @@ describe('Follow Back Module', () => {
       const result = await followBack(user, token).isFollowingBack(
         'farhan7reza7',
       );
-      expect(result).toBe('Yes, farhan7reza7 following back!');
+      expect(result).toBe('No, farhan7reza7 does not following back!');
     });
 
     // Test case to check if a user is not following back
