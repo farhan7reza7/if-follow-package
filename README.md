@@ -69,7 +69,7 @@ npm install @farhan7reza7/if-follow-package
 
 ```html
     <script src="https://cdn.jsdelivr.net/npm/axios@0.28.0/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/if-follow-package@3.0.0/lib/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/if-follow-package@3.0.1/lib/index.min.js"></script>
 ```
 
 [Get any supported version script tag](https://github.com/farhan7reza7/if-follow-package/wiki/Supported-versions-script-tags)
