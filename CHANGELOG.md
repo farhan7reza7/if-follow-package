@@ -14,16 +14,20 @@ and follows the guidelines from [Keep a Changelog](https://keepachangelog.com/).
 ### [1.0.0] - 2024-02-01
 
 #### Added
+
 - Initial public release on github registry.
 
 #### Changed
+
 - Updated documentation in `README.md`.
 - Improved and added comprehensive tests using Jest.
 
 #### Fixed
+
 - Resolved minor bugs and issues.
 
 #### Security
+
 - Enhanced security measures in API requests.
 
 ### [v1.0.1]
@@ -113,12 +117,13 @@ fixed some issues and configured files for v1.1.2
 fixed some version 2.0.0 error and configured files for v2.1.0
 
 #### Changed
-now version 2.0.0 working correctly, resolves v2.0.0 errors
 
+now version 2.0.0 working correctly, resolves v2.0.0 errors
 
 ### [v2.1.1]
 
 #### Changed
+
 now version 2.1.1 working correctly, resolves v2.1.0 unfollow feature errors
 
 #### Fixed
@@ -148,7 +153,6 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - Updated codes to serve cdn source from lib while npm for src
 - fixed some other issues and configured files for v2.1.4
 
-
 ### [v2.2.0]
 
 #### Added
@@ -164,7 +168,6 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - Updated source codes for adding ifFollow
 - Updated Readme and jsdoc doc for CDN approach
 
-
 #### Fixed
 
 - Fixed some issues related to the new changes.
@@ -173,25 +176,27 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 ### [v2.2.1]
 
 #### Fixed
+
 - Updated reademe doc for documenting cdn and npm approach following best practices
 - fixed some other issues and configured files for v2.2.1
 
 #### Changed
-- Updated links to abs url for cross compatibility
 
+- Updated links to abs url for cross compatibility
 
 ### [v2.2.2]
 
 #### Fixed
+
 - Updated axios version to 0.28.0 for cross compatibility
 - updated doc for documenting latest cdn and npm approach following best practices for v2.2.2
 - fixed some other issues and configured files for v2.2.2
 
 #### Changed
+
 - Updated axios version to 0.28.0 for cross compatibility
 - added security dependabot
 - add codeql
-
 
 ### [v3.0.0] - [2024-02-24]
 
@@ -201,6 +206,7 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 - Updated the README.md documentation for following the best practices.
 
 #### Changed
+
 - Updated the README.md documentation for following the best practices.
 - Updated issue templates with correct descriptions and links
 
@@ -213,10 +219,16 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 
 - README.md updated: Added consistent formating and recommended for best practices.
 
+### [v3.0.1]
+
+#### Fixed
+
+- added if-follow-package.d.ts to resolve the types issue and hinting codes suggetion in editor
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.0...HEAD)
-- [v3.0.0](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.0)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.1...HEAD)
+- [v3.0.1](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.1)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
