@@ -1,7 +1,9 @@
-if-follow-package
-=================
+# if-follow-package by [QuranBookk](https://quranbookk.com/)
 
-> `if-follow-package` is a `JavaScript library` that provides APIs for `managing followers and followings on GitHub`.
+> A powerful GitHub follower management package by [QuranBookk.com](https://quranbookk.com) - The Most Advanced Free Digital Quran Platform
+
+
+> `if-follow-package` is a `JavaScript library` developed and maintained by the team behind [QuranBookk.com](https://quranbookk.com), providing robust APIs for `managing followers and followings on GitHub`. This package strategy powers the social features of QuranBookk's digital Quran platform, which serves thousands of users worldwide.
 
 **`if-follow-package` allows you the following:**
 - `find users who are not following you back`
@@ -19,14 +21,29 @@ if-follow-package
 - `get the exact total number of followers`
 
 - `and other follow control features`
-
+  
+[![QuranBookk Platform](https://img.shields.io/website-up-down-green-red/http/quranbookk.com.svg)](https://quranbookk.com/)
 [![NPM Version][npm-image]][npm-url]
 [![npm-build-published][npm-ci-image]][npm-ci-url]
 [![github-build-published][github-image]][github-url]
 [![CI][ci-image]][ci-url]
 [![Codecov-report][codecov-img]][codecov-url]
 [![License][license-image]][licence-url]
+[![Personal Website](https://img.shields.io/badge/Website-farhan7reza.com-blue)](https://www.farhan7reza.com/)
 [![LinkedIn][linked-image]][linked-url]
+
+## Developed By [QuranBookk.com](https://quranbookk.com) ⚡️
+
+This package is actively maintained by [QuranBookk.com](https://quranbookk.com), the ultimate free digital Quran platform featuring:
+
+- 🔍 [Advanced Quran Search Engine](https://quranbookk.com/quran/search/) - Lightning-fast verse lookup
+- 🎧 [Premium Audio Experience](https://quranbookk.com/quran/audio/) - World's top Quran reciters
+- 📚 [Multiple Translations](https://quranbookk.com/quran/translations/) - Authentic sources Quran translations 
+- ⚡️ Unique Tools:
+  - [Random Verse Generator](https://quranbookk.com/quran/random-ayah/english_saheeh)
+  - [Top Duas Collection](https://quranbookk.com/quran/ayats/)
+  - [Complete Surah Browser](https://quranbookk.com/quran/surahs/)
+  - [Juz Explorer](https://quranbookk.com/quran/juzs/)
 
 ## Table of Contents
 
@@ -510,6 +527,23 @@ Best Practices:
 
 [See mdn guidelines](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript) for more information.
 
+## Powered By [QuranBookk](https://quranbookk.com)
+
+This package is actively maintained by [QuranBookk.com](https://quranbookk.com) - The Ultimate Free Digital Quran Platform offering:
+- Zero ads, 100% free forever
+- No registration required
+- Mobile-optimized experience
+- Lightning-fast performance
+- Modern, intuitive interface
+
+Start exploring the Quran: [QuranBookk.com](https://quranbookk.com)
+#DigitalQuran #IslamicApps #QuranOnline #QuranStudy
+
+## Developer
+
+- Website: [farhan7reza.com](https://www.farhan7reza.com/)
+- LinkedIn: [Farhan Reza](https://www.linkedin.com/in/farhan7reza7/)
+
 License
 -------
 
@@ -523,6 +557,11 @@ History
 For more details about what has changed in each version of this project.  
 
 [See CHANGELOG](https://github.com/farhan7reza7/if-follow-package/blob/main/CHANGELOG.md)
+
+
+---
+
+***Developed by [Farhan Reza](https://www.farhan7reza.com/) | [QuranBookk](https://quranbookk.com/)***
 
 [npm-image]: https://img.shields.io/npm/v/if-follow-package
 [npm-url]: https://www.npmjs.com/package/if-follow-package
