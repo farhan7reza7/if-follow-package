@@ -231,10 +231,16 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 
 - added developer details and checking for token to publish if expired
 
+### [v3.0.3]
+
+#### Fixed
+
+- added developer details and checking for token to publish if expired
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.2...HEAD)
-- [v3.0.2](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.2)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.3...HEAD)
+- [v3.0.3](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.3)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
