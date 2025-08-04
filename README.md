@@ -3,7 +3,7 @@
 > A powerful GitHub follower management package by [QuranBookk.com](https://quranbookk.com) - The Most Advanced Free Digital Quran Platform
 
 
-> `if-follow-package` is a `JavaScript library` developed and maintained by the team behind [QuranBookk.com](https://quranbookk.com), providing robust APIs for `managing followers and followings on GitHub`. This package strategy powers the social features of QuranBookk's digital Quran platform, which serves thousands of users worldwide.
+> `if-follow-package` is a `JavaScript library` developed and maintained by the team behind [QuranBookk.com](https://quranbookk.com), providing robust APIs for `managing followers and followings on GitHub`. This package strategy powers the social features of QuranBookk's digital Quran and Islam, which serves thousands of users worldwide.
 
 **`if-follow-package` allows you the following:**
 - `find users who are not following you back`
@@ -57,6 +57,8 @@ This package is actively maintained by [QuranBookk.com](https://quranbookk.com),
 - 🕋 **[Qibla Direction Finder](https://www.quranbookk.com/qibla-finder)** – Accurate Kaaba direction from anywhere in the world  
 - 🕰️ **[Islamic Prayer Times](https://www.quranbookk.com/prayer-times)** – Updated Salah timings based on your current location  
 - 📿 **[Digital Tasbih Counter](https://www.quranbookk.com/digital-tasbih)** – Count your Dhikr anytime, anywhere  
+- 🤖 **[Ask Shia AI](https://www.quranbookk.com/ask-shia-ai)** – AI-powered assistant for Shia Islamic questions, Quran, and Hadiths
+- 🤖 **[Ask Sunni AI](https://www.quranbookk.com/ask-sunni-ai)** – AI-powered assistant for Sunni Islamic questions and Hadiths
 - 📚 **[Authentic Hadith Collections](https://www.quranbookk.com/hadiths/hadiths-sources)** – Sahih Bukhari, Sahih Muslim, and more  
 - 🕯️ **[Top Quranic Duas](https://www.quranbookk.com/quran/ayats)** – Beautiful supplications with translations  
 - 🔍 **[Advanced Quran Search](https://www.quranbookk.com/quran/search)** – Search verses, words, topics in seconds  
@@ -547,7 +549,7 @@ Best Practices:
 
 ## Powered By [QuranBookk](https://quranbookk.com)
 
-This package is actively maintained by [QuranBookk.com](https://quranbookk.com) - The Ultimate Free Digital Quran Platform offering:
+This package is actively maintained by [QuranBookk.com](https://quranbookk.com) - The Ultimate Free Digital Quran and Islam Platform offering:
 - Zero ads, 100% free forever
 - No registration required
 - Mobile-optimized experience
