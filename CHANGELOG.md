@@ -249,12 +249,19 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 
 - updating developer details
 
+### [v3.0.6]
+
+#### Fixed
+
+- updating developer details
+
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.5...HEAD)
-- [v3.0.5](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.5)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.6...HEAD)
+- [v3.0.6](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.6)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
+
 
 
