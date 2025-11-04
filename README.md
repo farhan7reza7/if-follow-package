@@ -36,7 +36,7 @@
 
 This package is actively maintained by [QuranBookk.com](https://quranbookk.com), the ultimate free digital Quran and Islam platform featuring:
 
-- 🔍 [Advanced Quran Search Engine](https://quranbookk.com/quran/search/) - Lightning-fast verse lookup
+- 🔍 [Advanced Quran Search Engine](https://quranbookk.com/search-quran/) - Lightning-fast verse lookup
 - 🎧 [Premium Audio Experience](https://quranbookk.com/quran/audio/) - World's top Quran reciters
 - 📚 [Multiple Translations](https://quranbookk.com/quran/translations/) - Authentic sources Quran translations 
 - ⚡️ Unique Tools:
@@ -49,10 +49,11 @@ This package is actively maintained by [QuranBookk.com](https://quranbookk.com),
 
 **[`QuranBookk.com:`](https://www.QuranBookk.com)** QuranBookk.com offers a **powerful suite of Quranic and Islamic tools and contents** designed to enhance your daily spiritual journey. With clean UI, multilingual access, and responsive design, it’s the go-to digital Islam and Quran platform for modern Muslims.
  
-### ✨ Key Features:
+#### ✨ Key Features:
 
 - 🎧 **[Listen to Top Reciters](https://www.quranbookk.com/quran/audio)** – High-quality audio recitations from world-renowned Qaris  
-- 🎥 **[Watch Quran Videos](https://www.quranbookk.com/quran/video)** – Inspirational Quranic recitation and learning videos  
+- 🎥 **[Watch Quran Videos](https://www.quranbookk.com/quran/video)** – Inspirational Quranic recitation and learning videos
+- 🔍 **[Advanced Quran Search](https://www.quranbookk.com/search-quran)** – Find verses, words, and topics from the Holy Quran in seconds
 - 🌍 **[Read Quran Top Translations](https://www.quranbookk.com/quran/translations)** – Multiple language support with leading Quran translations  
 - 🕋 **[Qibla Direction Finder](https://www.quranbookk.com/qibla-finder)** – Accurate Kaaba direction from anywhere in the world
 - 🕋 **[Worldwide Qibla Directions](https://www.quranbookk.com/qibla-finder/worldwide)** – Accurate Kaaba direction from any country, state, or city of the world    
@@ -64,10 +65,24 @@ This package is actively maintained by [QuranBookk.com](https://quranbookk.com),
 - 🤖 **[Ask Hadith AI](https://www.quranbookk.com/ask-hadith-ai)** – AI-powered assistant for Hadiths
 - 📚 **[Authentic Hadith Collections](https://www.quranbookk.com/hadiths/hadiths-sources)** – Sahih Bukhari, Sahih Muslim, and more  
 - 🕯️ **[Top Quranic Duas](https://www.quranbookk.com/quran/ayats)** – Beautiful supplications with translations  
-- 🔍 **[Advanced Quran Search](https://www.quranbookk.com/quran/search)** – Search verses, words, topics in seconds  
+- 🔍 **[Advanced Quran Search](https://www.farhan7reza.com/search-quran)** – Search verses, words, topics in seconds  
 - 📖 **[Explore Surahs](https://www.quranbookk.com/quran/surahs)** – Full Quran access with audio, video, and translations
 - 📖 **[Explore Juzs (Paras)](https://www.quranbookk.com/quran/juzs)** – Full Quran access with audio, video, and translations
-- ⚡ **[Internet Speed Test](https://www.quranbookk.com/internet-speed-tester)** – Get correct download, upload and ping speeds instantly
+- 🌙 **[99 Names of Allah](https://www.quranbookk.com/99-names-of-allah)** – Explore the beautiful names of Allah with Arabic text, audio, meanings, and transliteration
+
+#### ✨ Also From QuranBookk Team:
+
+- ⚡ **[Internet Speed Test](https://www.farhan7reza.com/internet-speed-test)** – Test your internet speed for free! Check download, upload speeds & ping instantly
+- 🎮 **[AI TicTacToe Game](https://www.farhan7reza.com/tic-tac-toe-game)** – Play online with smart AI bots or challenge your friends
+- 📅 **[Menstrual Cycle Tracker](https://www.farhan7reza.com/menstrual-cycle-tracker)** – Free period tracker & ovulation calculator with menstrual cycle calendar
+- 💖 **[Fertility Tracker](https://www.farhan7reza.com/fertility-tracker)** – Track your ovulation & fertile window for free online
+- 👶 **[Pregnancy Due Date Finder](https://www.farhan7reza.com/pregnancy-due-date-finder)** – Calculate your baby's due date & pregnancy week instantly
+- 💕 **[Love Compatibility Finder](https://www.farhan7reza.com/love-compatibility-finder)** – Free relationship match test to check love compatibility
+- 🍀 **[Daily Luck Finder](https://www.farhan7reza.com/luck-finder)** – Discover your daily luck score with free numerology calculator
+- ⭐ **[Zodiac Sign Finder](https://www.farhan7reza.com/zodiac-sign-finder)** – Find your Rashi & horoscope sign by birth date
+- 🎂 **[Age Calculator](https://www.farhan7reza.com/age-finder)** – Calculate your exact age in years, months & days online
+- 📊 **[Date Analyzer](https://www.farhan7reza.com/date-analyzer)** – Free astrology & numerology date analysis online
+- ⏳ **[Dates Duration Calculator](https://www.farhan7reza.com/dates-difference-calculator)** – Calculate days, months & years between two dates
 
 ## Table of Contents
 
