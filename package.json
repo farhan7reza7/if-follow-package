@@ -62,6 +62,6 @@
   },
   "homepage": "https://github.com/farhan7reza7/if-follow-package/blob/main/README.md",
   "dependencies": {
-    "axios": "^0.28.0"
+    "axios": "^0.30.0"
   }
 }
