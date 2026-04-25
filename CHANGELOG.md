@@ -273,13 +273,18 @@ fixed some version 2.1.0 error and configured files for v2.1.1
 
 - updated details about parent developer QuranBookk.com
 
+### [v3.0.10]
+
+#### Fixed
+
+- Added more details about parent developer QuranBookk.com
 
 ### [Next Release] - Collecting issues and new features for next release
 
 ### Important changes links:
 
-- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.9...HEAD)
-- [v3.0.9](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.9)
+- [Unreleased](https://github.com/farhan7reza7/if-follow-package/compare/v3.0.10...HEAD)
+- [v3.0.10](https://github.com/farhan7reza7/if-follow-package/releases/tag/v3.0.10)
 - [Release](https://github.com/farhan7reza7/if-follow-package/milestone/2)
 
 
