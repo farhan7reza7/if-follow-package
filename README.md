@@ -1,6 +1,7 @@
-# if-follow-package
+# if-follow-package by [QuranBookk](https://quranbookk.com/)
 
-> A powerful GitHub follower management package
+<!-- > A powerful GitHub follower management package -->
+> Developed and maintained by [QuranBookk.com](https://quranbookk.com) - A Unified Islamic Platform
 
 > `if-follow-package` is a `JavaScript library`, providing robust APIs for `managing followers and followings on GitHub`.
 
@@ -20,7 +21,8 @@
 - `get the exact total number of followers`
 
 - `and other follow control features`
-  
+
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/quranbookk.com.svg)](https://quranbookk.com/)
 [![NPM Version][npm-image]][npm-url]
 [![npm-build-published][npm-ci-image]][npm-ci-url]
 [![github-build-published][github-image]][github-url]
@@ -29,6 +31,36 @@
 [![License][license-image]][licence-url]
 [![Personal Website](https://img.shields.io/badge/Website-farhan7reza.com-blue)](https://www.farhan7reza.com/)
 [![LinkedIn][linked-image]][linked-url]
+
+## About [QuranBookk](https://quranbookk.com) - The Developer
+
+**[`QuranBookk.com:`](https://www.QuranBookk.com)** QuranBookk.com is a unified digital Islamic platform offering a **powerful suite of authenticated Islamic tools and contents** for Muslims worldwide. Engineered with a **local-first data architecture** to guarantee absolute user privacy and data security, the platform performs complex GPS-aware sub-millimeter [Qibla](https://www.QuranBookk.com/qibla-finder) computations (via the Karney geodesic algorithm) entirely on-device. With clean modern UI, responsive design and privacy first secure architecture, it stands as the definitive, privacy-first digital platform for the global Muslim community.
+
+### ✨ Key Features:
+
+- 📖 **[Digital Quran](https://www.quranbookk.com/digital-quran)** – Read the complete 604-page Quran online, page by page, with a high-quality Mushaf experience
+- 🎧 **[Listen to Top Reciters](https://www.quranbookk.com/quran/audio)** – High-quality audio recitations from world-renowned Qaris
+- 🎥 **[Watch Quran Videos](https://www.quranbookk.com/quran/video)** – Inspirational Quranic recitation and learning videos
+- 🔍 **[Advanced Quran Search](https://www.quranbookk.com/search-quran)** – Find verses, words, and topics from the Holy Quran in seconds
+- 🌐 **[Read Quran Top Translations](https://www.quranbookk.com/quran/translations)** – Multiple language support with leading Quran translations
+- 📜 **[Explore Surahs](https://www.quranbookk.com/quran/surahs)** – Full Quran access with audio, video, and translations
+- 📋 **[Explore Juzs (Paras)](https://www.quranbookk.com/quran/juzs)** – Full Quran access with audio, video, and translations
+- 🔀 **[Random Quran Verse](https://www.quranbookk.com/quran/random-ayah/english_saheeh)** – Get inspired with a random verse from the Holy Quran with translation
+- 🤲 **[Top Quranic Duas](https://www.quranbookk.com/quran/ayats)** – Beautiful supplications with translations
+- ✨ **[99 Names of Allah](https://www.quranbookk.com/99-names-of-allah)** – Explore the beautiful names of Allah with Arabic text, audio, meanings, and transliteration
+- 📚 **[Authentic Hadith Collections](https://www.quranbookk.com/hadiths/hadiths-sources)** – Sahih Bukhari, Sahih Muslim, and more
+- 🔀 **[Random Hadith](https://www.quranbookk.com/hadiths/random-hadith/bukhari)** – Get inspired with a random authentic Hadith from trusted sources like Sahih Bukhari
+- 🤖 **[Ask Islam AI](https://www.quranbookk.com/ask-islam-ai)** – AI-powered assistant for Islamic questions, Quran, and Hadiths
+- 🤖 **[Ask Quran AI](https://www.quranbookk.com/ask-quran-ai)** – AI-powered assistant for answering about Islamic history, Quran, and Hadiths
+- 🤖 **[Ask Hadith AI](https://www.quranbookk.com/ask-hadith-ai)** – AI-powered assistant for Hadiths
+- 🧭 **[Qibla Direction Finder](https://www.quranbookk.com/qibla-finder)** – Accurate Kaaba direction from anywhere in the world
+- 🕋 **[Worldwide Qibla Directions](https://www.quranbookk.com/qibla-finder/worldwide)** – Accurate Kaaba direction from any country, state, or city of the world
+- 🕰️ **[Islamic Prayer Times](https://www.quranbookk.com/prayer-times)** – Updated Salah timings based on your current location
+- 🕰️ **[Worldwide Islamic Prayer Times](https://www.quranbookk.com/prayer-times/worldwide)** – Updated Salah timings for any country, state, or city of the world
+- 📅 **[Islamic Calendar Finder](https://www.quranbookk.com/islamic-calendar)** – Get accurate Hijri calendar with location aware calculations
+- 🗓️ **[Global Hijri Calendars](https://www.quranbookk.com/islamic-calendar/worldwide)** – Get accurate Hijri calendar with prayer times for any country, state or city of the world
+- 📿 **[Digital Tasbih Counter](https://www.quranbookk.com/digital-tasbih)** – Count your Dhikr anytime, anywhere
+- ✍️ **[Islamic Insights Blog](https://www.quranbookk.com/blog)** – Premium articles on Tafsir, Hifz, Tajweed, Islamic lifestyle, islamic solutions to modern challenges, and more
 
 ## Table of Contents
 
@@ -512,6 +544,10 @@ Best Practices:
 
 [See mdn guidelines](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript) for more information.
 
+## Powered By
+
+- Company: [QuranBookk - A Unified Islamic Platform](https://www.quranbookk.com)
+
 ## Developer
 
 - Website: [farhan7reza.com](https://www.farhan7reza.com/)
@@ -534,7 +570,7 @@ For more details about what has changed in each version of this project.
 
 ---
 
-***Developed by [Farhan Reza](https://www.farhan7reza.com/)***
+***Developed by [Farhan Reza](https://www.farhan7reza.com/) | [QuranBookk](https://quranbookk.com/)***
 
 [npm-image]: https://img.shields.io/npm/v/if-follow-package
 [npm-url]: https://www.npmjs.com/package/if-follow-package
